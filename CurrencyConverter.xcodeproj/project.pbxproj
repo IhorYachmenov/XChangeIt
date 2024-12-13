@@ -12,6 +12,16 @@
 		58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */; };
 		58E5D1BB2D0C740B000E39B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1BA2D0C740B000E39B4 /* Assets.xcassets */; };
 		58E5D1BE2D0C740B000E39B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1BD2D0C740B000E39B4 /* Base */; };
+		58E5D1C82D0C7E7F000E39B4 /* CorrencyConververViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1C72D0C7E7F000E39B4 /* CorrencyConververViewController.swift */; };
+		58E5D1CD2D0C826B000E39B4 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1CC2D0C826B000E39B4 /* UIColor+AppColors.swift */; };
+		58E5D1D62D0C8BBC000E39B4 /* ReadexPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1CF2D0C8BBC000E39B4 /* ReadexPro-Regular.ttf */; };
+		58E5D1D72D0C8BBC000E39B4 /* ReadexPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D02D0C8BBC000E39B4 /* ReadexPro-Medium.ttf */; };
+		58E5D1D82D0C8BBC000E39B4 /* ReadexPro-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D12D0C8BBC000E39B4 /* ReadexPro-Variable.ttf */; };
+		58E5D1D92D0C8BBC000E39B4 /* ReadexPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D22D0C8BBC000E39B4 /* ReadexPro-Light.ttf */; };
+		58E5D1DA2D0C8BBC000E39B4 /* ReadexPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D32D0C8BBC000E39B4 /* ReadexPro-ExtraLight.ttf */; };
+		58E5D1DB2D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D42D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf */; };
+		58E5D1DC2D0C8BBC000E39B4 /* ReadexPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D52D0C8BBC000E39B4 /* ReadexPro-Bold.ttf */; };
+		58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1DD2D0C8C43000E39B4 /* UIFont+AppFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +32,16 @@
 		58E5D1BA2D0C740B000E39B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58E5D1BD2D0C740B000E39B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58E5D1BF2D0C740B000E39B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58E5D1C72D0C7E7F000E39B4 /* CorrencyConververViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrencyConververViewController.swift; sourceTree = "<group>"; };
+		58E5D1CC2D0C826B000E39B4 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		58E5D1CF2D0C8BBC000E39B4 /* ReadexPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Regular.ttf"; sourceTree = "<group>"; };
+		58E5D1D02D0C8BBC000E39B4 /* ReadexPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Medium.ttf"; sourceTree = "<group>"; };
+		58E5D1D12D0C8BBC000E39B4 /* ReadexPro-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Variable.ttf"; sourceTree = "<group>"; };
+		58E5D1D22D0C8BBC000E39B4 /* ReadexPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Light.ttf"; sourceTree = "<group>"; };
+		58E5D1D32D0C8BBC000E39B4 /* ReadexPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		58E5D1D42D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		58E5D1D52D0C8BBC000E39B4 /* ReadexPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Bold.ttf"; sourceTree = "<group>"; };
+		58E5D1DD2D0C8C43000E39B4 /* UIFont+AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFont.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +74,11 @@
 		58E5D1B02D0C740A000E39B4 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				58E5D1CB2D0C825A000E39B4 /* Extensions */,
 				58E5D1C62D0C7765000E39B4 /* Resources */,
 				58E5D1C52D0C770D000E39B4 /* Application */,
 				58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */,
+				58E5D1C72D0C7E7F000E39B4 /* CorrencyConververViewController.swift */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -73,11 +95,43 @@
 		58E5D1C62D0C7765000E39B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				58E5D1CE2D0C8BA3000E39B4 /* Fonts */,
 				58E5D1BA2D0C740B000E39B4 /* Assets.xcassets */,
 				58E5D1BC2D0C740B000E39B4 /* LaunchScreen.storyboard */,
 				58E5D1BF2D0C740B000E39B4 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		58E5D1CB2D0C825A000E39B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1CC2D0C826B000E39B4 /* UIColor+AppColors.swift */,
+				58E5D1DD2D0C8C43000E39B4 /* UIFont+AppFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		58E5D1CE2D0C8BA3000E39B4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1DF2D0C8C59000E39B4 /* ReadexPro */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		58E5D1DF2D0C8C59000E39B4 /* ReadexPro */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1D52D0C8BBC000E39B4 /* ReadexPro-Bold.ttf */,
+				58E5D1D32D0C8BBC000E39B4 /* ReadexPro-ExtraLight.ttf */,
+				58E5D1D22D0C8BBC000E39B4 /* ReadexPro-Light.ttf */,
+				58E5D1D02D0C8BBC000E39B4 /* ReadexPro-Medium.ttf */,
+				58E5D1CF2D0C8BBC000E39B4 /* ReadexPro-Regular.ttf */,
+				58E5D1D42D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf */,
+				58E5D1D12D0C8BBC000E39B4 /* ReadexPro-Variable.ttf */,
+			);
+			path = ReadexPro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +192,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E5D1DB2D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf in Resources */,
+				58E5D1DC2D0C8BBC000E39B4 /* ReadexPro-Bold.ttf in Resources */,
+				58E5D1D72D0C8BBC000E39B4 /* ReadexPro-Medium.ttf in Resources */,
+				58E5D1D62D0C8BBC000E39B4 /* ReadexPro-Regular.ttf in Resources */,
 				58E5D1BB2D0C740B000E39B4 /* Assets.xcassets in Resources */,
+				58E5D1DA2D0C8BBC000E39B4 /* ReadexPro-ExtraLight.ttf in Resources */,
 				58E5D1BE2D0C740B000E39B4 /* Base in Resources */,
+				58E5D1D92D0C8BBC000E39B4 /* ReadexPro-Light.ttf in Resources */,
+				58E5D1D82D0C8BBC000E39B4 /* ReadexPro-Variable.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +212,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */,
+				58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */,
 				58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */,
+				58E5D1C82D0C7E7F000E39B4 /* CorrencyConververViewController.swift in Sources */,
 				58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */,
+				58E5D1CD2D0C826B000E39B4 /* UIColor+AppColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
