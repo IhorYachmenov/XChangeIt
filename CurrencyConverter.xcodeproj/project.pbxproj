@@ -30,6 +30,9 @@
 		58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */; };
 		58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */; };
 		58E5D1FC2D0DCF4B000E39B4 /* CurrencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1FB2D0DCF4B000E39B4 /* CurrencyType.swift */; };
+		58E5D1FF2D0DD8A5000E39B4 /* CurrencyListsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1FE2D0DD8A5000E39B4 /* CurrencyListsVC.swift */; };
+		58E5D2012D0DF11F000E39B4 /* UIImageView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D2002D0DF11F000E39B4 /* UIImageView+Animation.swift */; };
+		58E5D2032D0DF197000E39B4 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D2022D0DF197000E39B4 /* UIView+Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Inset.swift"; sourceTree = "<group>"; };
 		58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTypeView.swift; sourceTree = "<group>"; };
 		58E5D1FB2D0DCF4B000E39B4 /* CurrencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyType.swift; sourceTree = "<group>"; };
+		58E5D1FE2D0DD8A5000E39B4 /* CurrencyListsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListsVC.swift; sourceTree = "<group>"; };
+		58E5D2002D0DF11F000E39B4 /* UIImageView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animation.swift"; sourceTree = "<group>"; };
+		58E5D2022D0DF197000E39B4 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,8 @@
 				58E5D1E92D0CBD04000E39B4 /* UIViewController+Header.swift */,
 				58E5D1F02D0CC918000E39B4 /* UIView+Shadow.swift */,
 				58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */,
+				58E5D2002D0DF11F000E39B4 /* UIImageView+Animation.swift */,
+				58E5D2022D0DF197000E39B4 /* UIView+Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 		58E5D1EB2D0CBEB7000E39B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				58E5D1FD2D0DD885000E39B4 /* PopUpList */,
 				58E5D1EC2D0CBEEB000E39B4 /* ExchangeAmountView.swift */,
 				58E5D1EE2D0CC613000E39B4 /* ConvertedAmountCardView.swift */,
 				58E5D1F22D0CCFEF000E39B4 /* CurrencyCardView.swift */,
@@ -188,6 +197,14 @@
 				58E5D1FB2D0DCF4B000E39B4 /* CurrencyType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		58E5D1FD2D0DD885000E39B4 /* PopUpList */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1FE2D0DD8A5000E39B4 /* CurrencyListsVC.swift */,
+			);
+			path = PopUpList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +288,7 @@
 				58E5D1EA2D0CBD04000E39B4 /* UIViewController+Header.swift in Sources */,
 				58E5D1FC2D0DCF4B000E39B4 /* CurrencyType.swift in Sources */,
 				58E5D1EF2D0CC613000E39B4 /* ConvertedAmountCardView.swift in Sources */,
+				58E5D1FF2D0DD8A5000E39B4 /* CurrencyListsVC.swift in Sources */,
 				58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */,
 				58E5D1F12D0CC918000E39B4 /* UIView+Shadow.swift in Sources */,
 				58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */,
@@ -278,7 +296,9 @@
 				58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */,
 				58E5D1F32D0CCFEF000E39B4 /* CurrencyCardView.swift in Sources */,
 				58E5D1ED2D0CBEEB000E39B4 /* ExchangeAmountView.swift in Sources */,
+				58E5D2032D0DF197000E39B4 /* UIView+Animation.swift in Sources */,
 				58E5D1C82D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift in Sources */,
+				58E5D2012D0DF11F000E39B4 /* UIImageView+Animation.swift in Sources */,
 				58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */,
 				58E5D1CD2D0C826B000E39B4 /* UIColor+AppColors.swift in Sources */,
 			);

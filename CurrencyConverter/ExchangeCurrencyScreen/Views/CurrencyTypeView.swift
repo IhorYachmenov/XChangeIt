@@ -20,17 +20,19 @@ fileprivate struct Styles {
 }
 
 class CurrencyTypeView: UIView {
+    var showCurrencyList: ((_ isSourceCurrency: Bool, _ currentCurrency: CurrencyType) -> ())?
+    
     let sourceCurrency: Bool
     
-    lazy var currencyImage: UIImageView = {
+    private(set) var currentCurrency: CurrencyType
+    
+    private lazy var currencyImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        // TODO: -
-        view.image = UIImage(named: "AustraliaFlagCircle")
         return view
     }()
     
-    lazy var titleView: UILabel = {
+    private lazy var titleView: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = Styles.Color.titleColor
@@ -40,18 +42,18 @@ class CurrencyTypeView: UIView {
         return view
     }()
     
-    lazy var currencyType: UILabel = {
+    private lazy var currencyType: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = Styles.Color.currencyColor
         view.textAlignment = sourceCurrency ? .left : .right
         view.font = UIFont.appFont(type: .regular, size: 16)
-        view.text = "USD"
         return view
     }()
     
-    init(frame: CGRect, sourceTarget: Bool) {
+    init(frame: CGRect, sourceTarget: Bool, currentCurrency: CurrencyType) {
         self.sourceCurrency = sourceTarget
+        self.currentCurrency = currentCurrency
         super.init(frame: frame)
         initUI()
     }
@@ -63,6 +65,9 @@ class CurrencyTypeView: UIView {
     private func initUI() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .clear
+        applyTapGestureToView()
+        
+        updateCurrencyViewDetails()
         
         addSubview(currencyImage)
         addSubview(titleView)
@@ -94,5 +99,28 @@ class CurrencyTypeView: UIView {
             currencyType.trailingAnchor.constraint(equalTo: currencyImage.leadingAnchor, constant: -8).isActive = true
             currencyType.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         }
+    }
+    
+    private func applyTapGestureToView() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleViewClock))
+        gesture.numberOfTapsRequired = 1
+        gesture.numberOfTouchesRequired = 1
+        addGestureRecognizer(gesture)
+    }
+    
+    @objc
+    private func handleViewClock() {
+        showCurrencyList?(sourceCurrency, currentCurrency)
+    }
+    
+    private func updateCurrencyViewDetails() {
+        currencyImage.setImage(currentCurrency.image.circle)
+        currencyType.fadeTransition()
+        currencyType.text = currentCurrency.description.code
+    }
+    
+    func updateCurrency(_ currency: CurrencyType) {
+        currentCurrency = currency
+        updateCurrencyViewDetails()
     }
 }

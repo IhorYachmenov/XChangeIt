@@ -18,26 +18,26 @@ enum CurrencyType {
     case swedishKrona
     case polishZloty
     
-    var description: (name: String, code: String) {
+    var description: (name: String, code: String, sign: String) {
         return switch self {
         case .unitedStatesDollar:
-            ("United States Dollar", "USD")
+            ("United States Dollar", "USD", "$")
         case .euro:
-            ("Euro", "EUR")
+            ("Euro", "EUR", "€")
         case .britishPound:
-            ("British Pound", "GBP")
+            ("British Pound", "GBP", "£")
         case .japaneseYen:
-            ("Japanese Yen", "JPY")
+            ("Japanese Yen", "JPY", "¥")
         case .swissFranc:
-            ("Swiss Franc", "CHF")
+            ("Swiss Franc", "CHF", "SFr.")
         case .australianDollar:
-            ("Australian Dollar", "AUD")
+            ("Australian Dollar", "AUD", "$A")
         case .canadianDollar:
-            ("Canadian Dollar", "CAD")
+            ("Canadian Dollar", "CAD", "$C")
         case .swedishKrona:
-            ("Swedish Krona", "SEK")
+            ("Swedish Krona", "SEK", "kr")
         case .polishZloty:
-            ("Polish Zloty", "PLN")
+            ("Polish Zloty", "PLN", "zł")
         }
     }
     
@@ -67,4 +67,16 @@ enum CurrencyType {
     private func img(_ name: String) -> UIImage? {
         return UIImage(named: name)
     }
+    
+    static let listOfAll: [CurrencyType] = [
+        CurrencyType.unitedStatesDollar,
+        CurrencyType.euro,
+        CurrencyType.britishPound,
+        CurrencyType.japaneseYen,
+        CurrencyType.swissFranc,
+        CurrencyType.australianDollar,
+        CurrencyType.canadianDollar,
+        CurrencyType.swedishKrona,
+        CurrencyType.polishZloty
+    ]
 }

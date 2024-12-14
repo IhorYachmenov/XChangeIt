@@ -36,13 +36,15 @@ class ExchangeCurrencyViewController: UIViewController {
     
     lazy var currencyCardView: CurrencyCardView = {
         let view = CurrencyCardView()
+        view.showListOfCurrencies = { [weak self] identifier, currency in
+            self?.showListOfCurrencies(isSourceCurrency: identifier, currentCurrency: currency)
+        }
         return view
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        // Do any additional setup after loading the view.
     }
     
     deinit {
@@ -75,5 +77,28 @@ class ExchangeCurrencyViewController: UIViewController {
     @objc
     private func backButtonAction() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    private func showListOfCurrencies(isSourceCurrency: Bool, currentCurrency: CurrencyType) {
+        let currenciesVC = CurrencyListViewController(currentCurrency: currentCurrency)
+        currenciesVC.selectedValue = { [weak self] currency in
+            if isSourceCurrency {
+                self?.currencyCardView.sourceCurrency.updateCurrency(currency)
+            } else {
+                self?.currencyCardView.targetCurrency.updateCurrency(currency)
+            }
+        }
+        
+        let navigationVC = UINavigationController(rootViewController: currenciesVC)
+        
+        if let sheet = navigationVC.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersGrabberVisible = true
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            
+            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+        }
+        present(navigationVC, animated: true, completion: nil)
     }
 }

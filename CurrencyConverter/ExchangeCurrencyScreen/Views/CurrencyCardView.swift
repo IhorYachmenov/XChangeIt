@@ -24,7 +24,7 @@ fileprivate struct Styles {
     }
 }
 
-class SwapCurrencyTypesView: UIButton {
+fileprivate class SwapCurrencyTypesView: UIButton {
     private var isSwapped = false
     
     lazy var swapImage: UIImageView = {
@@ -95,17 +95,25 @@ class SwapCurrencyTypesView: UIButton {
 }
 
 class CurrencyCardView: UIView {
+    var showListOfCurrencies: ((_ isSourceTarget: Bool, _ currentCurrency: CurrencyType) -> ())?
+    
     lazy var sourceCurrency: CurrencyTypeView = {
-        let view = CurrencyTypeView(frame: .zero, sourceTarget: true)
+        let view = CurrencyTypeView(frame: .zero, sourceTarget: true, currentCurrency: .unitedStatesDollar)
+        view.showCurrencyList = { [weak self] identifier, currency in
+            self?.showListOfCurrencies?(identifier, currency)
+        }
         return view
     }()
     
     lazy var targetCurrency: CurrencyTypeView = {
-        let view = CurrencyTypeView(frame: .zero, sourceTarget: false)
+        let view = CurrencyTypeView(frame: .zero, sourceTarget: false, currentCurrency: .euro)
+        view.showCurrencyList = { [weak self] identifier, currency in
+            self?.showListOfCurrencies?(identifier, currency)
+        }
         return view
     }()
     
-    lazy var swapCurrencyView: SwapCurrencyTypesView = {
+    private lazy var swapCurrencyView: SwapCurrencyTypesView = {
         let view = SwapCurrencyTypesView()
         view.addAction(UIAction(handler: { [weak self] _ in
             self?.swapCurrencySources()
@@ -113,7 +121,7 @@ class CurrencyCardView: UIView {
         return view
     }()
     
-    lazy var viewTitle: UILabel = {
+    private lazy var viewTitle: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .left
@@ -123,7 +131,7 @@ class CurrencyCardView: UIView {
         return view
     }()
     
-    lazy var cardView: UIView = {
+    private lazy var cardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Styles.Color.cardColor
