@@ -129,11 +129,12 @@ final class CurrencyCardView: UIView {
         return view
     }()
     
+    let cardViewCornerRadius: CGFloat = 12
     private lazy var cardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Styles.Color.cardColor
-        view.layer.cornerRadius = 12
+        view.layer.cornerRadius = cardViewCornerRadius
         return view
     }()
     
@@ -170,7 +171,7 @@ final class CurrencyCardView: UIView {
         cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant:  0).isActive = true
         cardView.heightAnchor.constraint(equalToConstant: 68).isActive = true
         
-        cardView.makeShadow(color: Styles.Color.commonGrayColor?.cgColor ?? UIColor.black.cgColor, opacity: 0.2, offset: CGSize(width: 0, height: 3), radius: 1.5)
+        cardView.makeShadow(color: Styles.Color.commonGrayColor?.cgColor ?? UIColor.black.cgColor, opacity: 0.2, offset: CGSize(width: 0, height: 3), radius: 1.5, viewCornerRadius: cardViewCornerRadius)
         
         swapCurrencyView.centerXAnchor.constraint(equalTo: cardView.centerXAnchor).isActive = true
         swapCurrencyView.centerYAnchor.constraint(equalTo: cardView.centerYAnchor).isActive = true

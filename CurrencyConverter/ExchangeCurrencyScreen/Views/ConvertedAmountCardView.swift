@@ -67,11 +67,12 @@ final class ConvertedAmountCardView: UIView {
         return view
     }()
     
+    let cardViewCornerRadius: CGFloat = 12
     private lazy var cardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Styles.Color.cardColor
-        view.layer.cornerRadius = 12
+        view.layer.cornerRadius = cardViewCornerRadius
         return view
     }()
     
@@ -106,7 +107,7 @@ final class ConvertedAmountCardView: UIView {
         cardView.bottomAnchor.constraint(equalTo: bottomAnchor, constant:  0).isActive = true
         cardView.heightAnchor.constraint(equalToConstant: 68).isActive = true
         
-        cardView.makeShadow(color: Styles.Color.commonGrayColor?.cgColor ?? UIColor.black.cgColor, opacity: 0.2, offset: CGSize(width: 0, height: 3), radius: 1.5)
+        cardView.makeShadow(color: Styles.Color.commonGrayColor?.cgColor ?? UIColor.black.cgColor, opacity: 0.2, offset: CGSize(width: 0, height: 3), radius: 1.5, viewCornerRadius: cardViewCornerRadius)
         
         cardDivider.widthAnchor.constraint(equalToConstant: 1).isActive = true
         cardDivider.centerXAnchor.constraint(equalTo: cardView.centerXAnchor).isActive = true

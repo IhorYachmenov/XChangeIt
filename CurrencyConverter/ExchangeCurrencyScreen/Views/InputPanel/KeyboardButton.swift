@@ -84,12 +84,13 @@ final class KeyboardButton: UIButton {
     private func initUI() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = Styles.Color.buttonColor
-        layer.cornerRadius = 4
+        let viewCornerRadius: CGFloat = 4
+        layer.cornerRadius = viewCornerRadius
         
         makeShadow(color: Styles.Color.commonGrayColor?.cgColor ?? UIColor.black.cgColor,
                    opacity: 0.2,
                    offset: CGSize(width: 0, height: 3),
-                   radius: 1.5)
+                   radius: 1.5, viewCornerRadius: viewCornerRadius)
     
         switch keyboardButtonType {
         case .symbol(let symbol):
