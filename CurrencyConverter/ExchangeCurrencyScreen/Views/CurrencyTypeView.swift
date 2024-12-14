@@ -19,7 +19,7 @@ fileprivate struct Styles {
     }
 }
 
-class CurrencyTypeView: UIView {
+final class CurrencyTypeView: UIView {
     var showCurrencyList: ((_ isSourceCurrency: Bool, _ currentCurrency: CurrencyType) -> ())?
     
     let sourceCurrency: Bool

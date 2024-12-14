@@ -18,7 +18,7 @@ fileprivate struct Styles {
     }
 }
 
-class ExchangeAmountView: UIView {
+final class ExchangeAmountView: UIView {
     private var defaultSourceCurrency: CurrencyType
     private var currencySum: String = "1.000"
     
@@ -29,6 +29,7 @@ class ExchangeAmountView: UIView {
         view.textColor = Styles.Color.titleColor
         view.text = Styles.Text.screenTitle
         view.font = UIFont.appFont(type: .medium, size: 16)
+        view.numberOfLines = 1
         return view
     }()
     
@@ -38,6 +39,7 @@ class ExchangeAmountView: UIView {
         view.textAlignment = .center
         view.textColor = Styles.Color.sumColor
         view.font = UIFont.appFont(type: .semiBold, size: 32)
+        view.numberOfLines = 1
         return view
     }()
     
@@ -62,6 +64,7 @@ class ExchangeAmountView: UIView {
         title.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         title.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
+        sum.setContentHuggingPriority(UILayoutPriority(252), for: .vertical)
         sum.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 8).isActive = true
         sum.leadingAnchor.constraint(equalTo: leadingAnchor, constant:  16).isActive = true
         sum.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -16).isActive = true

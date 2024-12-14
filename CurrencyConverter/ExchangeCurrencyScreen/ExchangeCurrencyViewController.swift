@@ -53,7 +53,15 @@ final class ExchangeCurrencyViewController: UIViewController {
     private lazy var inputPanel: InputPannel = {
         let view = InputPannel()
         view.handleButtonClickAction = { [weak self] symbol in
-            self?.handleKeyboardButtonClick(symbol: symbol)
+            self?.handleFooterConverAction()
+        }
+        return view
+    }()
+    
+    private lazy var footerPanel: ConvertCurrencyView = {
+        let view = ConvertCurrencyView()
+        view.handleButtonClickAction = { [weak self] in
+            
         }
         return view
     }()
@@ -75,28 +83,41 @@ final class ExchangeCurrencyViewController: UIViewController {
         view.addSubview(convertedAmountCardView)
         view.addSubview(currencyCardView)
         view.addSubview(inputPanel)
+        view.addSubview(footerPanel)
         
-        let viewTopInset: CGFloat = 25 + UIApplication.windowInset.top + (navigationController?.view.safeAreaInsets.top ?? 0)
+        let topSafeArea: CGFloat = UIApplication.windowInset.top + (navigationController?.view.safeAreaInsets.top ?? 0)
+        let viewDefaultTopInset: CGFloat = 25 + topSafeArea
+        let smallerTopInset: CGFloat = 10 + topSafeArea
         
-        exchangeAmountView.topAnchor.constraint(equalTo: view.topAnchor, constant: viewTopInset).isActive = true
+        // Resizing For Small Screen
+        let topConstraintExchangeView: NSLayoutConstraint = exchangeAmountView.topAnchor.constraint(equalTo: view.topAnchor, constant: smallerTopInset)
+        topConstraintExchangeView.priority = .defaultHigh
+        topConstraintExchangeView.isActive = true
+        
+        exchangeAmountView.topAnchor.constraint(equalTo: view.topAnchor, constant: viewDefaultTopInset).isActive = true
         exchangeAmountView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         exchangeAmountView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        convertedAmountCardView.topAnchor.constraint(equalTo: exchangeAmountView.bottomAnchor, constant: 25).isActive = true
+        // Resizing For Small Screen
+        let topConstraintConvertedAmountCardView: NSLayoutConstraint = convertedAmountCardView.topAnchor.constraint(equalTo: exchangeAmountView.bottomAnchor)
+        topConstraintConvertedAmountCardView.priority = .defaultHigh
+        topConstraintConvertedAmountCardView.isActive = true
+        convertedAmountCardView.topAnchor.constraint(lessThanOrEqualTo: exchangeAmountView.bottomAnchor, constant: 25).isActive = true
         convertedAmountCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         convertedAmountCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
+
         currencyCardView.topAnchor.constraint(equalTo: convertedAmountCardView.bottomAnchor, constant: 16).isActive = true
         currencyCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         currencyCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        // TODO: botton constaint
         inputPanel.topAnchor.constraint(equalTo: currencyCardView.bottomAnchor, constant: 11).isActive = true
         inputPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         inputPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         
-        inputPanel.layer.borderColor = UIColor.red.cgColor
-        inputPanel.layer.borderWidth = 2
+        footerPanel.topAnchor.constraint(greaterThanOrEqualTo: inputPanel.bottomAnchor).isActive = true
+        footerPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        footerPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        footerPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -UIApplication.windowInset.bottom).isActive = true
     }
     
     @objc
@@ -128,8 +149,12 @@ final class ExchangeCurrencyViewController: UIViewController {
         }
         present(navigationVC, animated: true, completion: nil)
     }
-    
+    // TODO: -
     private func handleKeyboardButtonClick(symbol: KeyboardButtonType) {
         print(symbol.symbol)
+    }
+    
+    private func handleFooterConverAction() {
+        print(#function)
     }
 }

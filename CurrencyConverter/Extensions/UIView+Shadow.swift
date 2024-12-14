@@ -9,9 +9,19 @@ import UIKit
 
 extension UIView {
     func makeShadow(color: CGColor, opacity: Float, offset: CGSize, radius: CGFloat) {
-        layer.shadowColor = color
-        layer.shadowOpacity = opacity
-        layer.shadowOffset = offset
-        layer.shadowRadius = radius
+        DispatchQueue.main.async { [weak self] in
+            self?.layer.shadowColor = color
+            self?.layer.shadowOpacity = opacity
+            self?.layer.shadowOffset = offset
+            self?.layer.shadowRadius = radius
+            
+            self?.layer.shouldRasterize = true
+            self?.layer.rasterizationScale = UIScreen.main.scale
+            
+            guard let bounds = self?.bounds else { return }
+            self?.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+            
+        }
+        
     }
 }

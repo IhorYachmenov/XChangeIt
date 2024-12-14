@@ -20,7 +20,7 @@ fileprivate struct Styles {
     }
 }
 
-class ConvertedAmountCardView: UIView {
+final class ConvertedAmountCardView: UIView {
     private lazy var viewTitle: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -120,11 +120,13 @@ class ConvertedAmountCardView: UIView {
         convertedAmountTitle.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 17).isActive = true
         convertedAmountTitle.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 14).isActive = true
         convertedAmountTitle.trailingAnchor.constraint(equalTo: cardDivider.leadingAnchor, constant: 0).isActive = true
+        convertedAmountTitle.heightAnchor.constraint(equalToConstant: 17).isActive = true
         
         convertedAmountView.topAnchor.constraint(equalTo: convertedAmountTitle.bottomAnchor, constant: 0).isActive = true
         convertedAmountView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 14).isActive = true
         convertedAmountView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -17).isActive = true
         convertedAmountView.trailingAnchor.constraint(equalTo: cardDivider.leadingAnchor, constant: 0).isActive = true
+        convertedAmountView.heightAnchor.constraint(equalToConstant: 17).isActive = true
     }
     
     func updateTargetCurrency(_ currency: CurrencyType) {

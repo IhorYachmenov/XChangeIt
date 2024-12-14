@@ -18,7 +18,7 @@ fileprivate struct Styles {
     }
 }
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     private lazy var getStartedButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false

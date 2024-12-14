@@ -24,7 +24,7 @@ fileprivate struct Styles {
     }
 }
 
-fileprivate class SwapCurrencyTypesView: UIButton {
+fileprivate final class SwapCurrencyTypesView: UIButton {
     private var isSwapped = false
     
     lazy var swapImage: UIImageView = {
@@ -88,7 +88,7 @@ fileprivate class SwapCurrencyTypesView: UIButton {
     }
 }
 
-class CurrencyCardView: UIView {
+final class CurrencyCardView: UIView {
     let defaultSourceCurrency: CurrencyType
     let defaultTargetCurrency: CurrencyType
     
