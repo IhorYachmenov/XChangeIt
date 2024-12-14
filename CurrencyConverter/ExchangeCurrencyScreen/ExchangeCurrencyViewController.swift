@@ -24,20 +24,28 @@ fileprivate struct Styles {
 }
 
 class ExchangeCurrencyViewController: UIViewController {
+    let defaultSourceCurrency: CurrencyType = .unitedStatesDollar
+    let defaultTargetCurrency: CurrencyType = .euro
+    
     lazy var exchangeAmountView: ExchangeAmountView = {
-        let view = ExchangeAmountView()
+        let view = ExchangeAmountView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency)
         return view
     }()
     
     lazy var convertedAmountCardView: ConvertedAmountCardView = {
         let view = ConvertedAmountCardView()
+        view.updateTargetCurrency(defaultTargetCurrency)
         return view
     }()
     
     lazy var currencyCardView: CurrencyCardView = {
-        let view = CurrencyCardView()
+        let view = CurrencyCardView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency, defaultTargetCurrency: defaultTargetCurrency)
         view.showListOfCurrencies = { [weak self] identifier, currency in
             self?.showListOfCurrencies(isSourceCurrency: identifier, currentCurrency: currency)
+        }
+        view.newTargetCurrency = { [weak self] targetCurrency, sourceCurrency in
+            self?.convertedAmountCardView.updateTargetCurrency(targetCurrency)
+            self?.exchangeAmountView.updateCurrencySymbol(currency: sourceCurrency)
         }
         return view
     }()
@@ -84,8 +92,10 @@ class ExchangeCurrencyViewController: UIViewController {
         currenciesVC.selectedValue = { [weak self] currency in
             if isSourceCurrency {
                 self?.currencyCardView.sourceCurrency.updateCurrency(currency)
+                self?.exchangeAmountView.updateCurrencySymbol(currency: currency)
             } else {
                 self?.currencyCardView.targetCurrency.updateCurrency(currency)
+                self?.convertedAmountCardView.updateTargetCurrency(currency)
             }
         }
         

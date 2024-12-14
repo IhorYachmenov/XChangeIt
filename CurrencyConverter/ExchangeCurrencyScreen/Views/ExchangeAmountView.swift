@@ -19,7 +19,10 @@ fileprivate struct Styles {
 }
 
 class ExchangeAmountView: UIView {
-    lazy var title: UILabel = {
+    private var defaultSourceCurrency: CurrencyType
+    private var currencySum: String = "1.000"
+    
+    private lazy var title: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .center
@@ -29,17 +32,17 @@ class ExchangeAmountView: UIView {
         return view
     }()
     
-    lazy var sum: UILabel = {
+    private lazy var sum: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .center
         view.textColor = Styles.Color.sumColor
-        view.text = "$1.000"
         view.font = UIFont.appFont(type: .semiBold, size: 32)
         return view
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, defaultSourceCurrency: CurrencyType) {
+        self.defaultSourceCurrency = defaultSourceCurrency
         super.init(frame: frame)
         initView()
     }
@@ -51,7 +54,7 @@ class ExchangeAmountView: UIView {
     private func initView() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .clear
-        
+        updateCurrencySumUI()
         addSubview(title)
         addSubview(sum)
         
@@ -63,5 +66,16 @@ class ExchangeAmountView: UIView {
         sum.leadingAnchor.constraint(equalTo: leadingAnchor, constant:  16).isActive = true
         sum.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -16).isActive = true
         sum.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
+    
+    private func updateCurrencySumUI() {
+        sum.fadeTransition()
+        sum.text = "\(defaultSourceCurrency.description.sign)\(currencySum)"
+    }
+    
+    func updateCurrencySymbol(currency: CurrencyType) {
+        defaultSourceCurrency = currency
+        updateCurrencySumUI()
     }
 }

@@ -95,10 +95,14 @@ fileprivate class SwapCurrencyTypesView: UIButton {
 }
 
 class CurrencyCardView: UIView {
+    let defaultSourceCurrency: CurrencyType
+    let defaultTargetCurrency: CurrencyType
+    
     var showListOfCurrencies: ((_ isSourceTarget: Bool, _ currentCurrency: CurrencyType) -> ())?
+    var newTargetCurrency: ((_ targetCurrency: CurrencyType, _ sourceCurrency: CurrencyType) -> ())?
     
     lazy var sourceCurrency: CurrencyTypeView = {
-        let view = CurrencyTypeView(frame: .zero, sourceTarget: true, currentCurrency: .unitedStatesDollar)
+        let view = CurrencyTypeView(frame: .zero, sourceTarget: true, currentCurrency: defaultSourceCurrency)
         view.showCurrencyList = { [weak self] identifier, currency in
             self?.showListOfCurrencies?(identifier, currency)
         }
@@ -106,7 +110,7 @@ class CurrencyCardView: UIView {
     }()
     
     lazy var targetCurrency: CurrencyTypeView = {
-        let view = CurrencyTypeView(frame: .zero, sourceTarget: false, currentCurrency: .euro)
+        let view = CurrencyTypeView(frame: .zero, sourceTarget: false, currentCurrency: defaultTargetCurrency)
         view.showCurrencyList = { [weak self] identifier, currency in
             self?.showListOfCurrencies?(identifier, currency)
         }
@@ -139,7 +143,10 @@ class CurrencyCardView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
+    
+    init(frame: CGRect, defaultSourceCurrency: CurrencyType, defaultTargetCurrency: CurrencyType) {
+        self.defaultSourceCurrency = defaultSourceCurrency
+        self.defaultTargetCurrency = defaultTargetCurrency
         super.init(frame: frame)
         initView()
     }
@@ -185,6 +192,10 @@ class CurrencyCardView: UIView {
     
     @objc
     private func swapCurrencySources() {
-        print(#function)
+        let source = sourceCurrency.currentCurrency
+        let target = targetCurrency.currentCurrency
+        sourceCurrency.updateCurrency(target)
+        targetCurrency.updateCurrency(source)
+        newTargetCurrency?(source, target)
     }
 }

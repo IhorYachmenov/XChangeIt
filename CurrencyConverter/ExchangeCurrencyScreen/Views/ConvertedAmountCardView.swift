@@ -21,7 +21,7 @@ fileprivate struct Styles {
 }
 
 class ConvertedAmountCardView: UIView {
-    lazy var viewTitle: UILabel = {
+    private lazy var viewTitle: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .left
@@ -31,36 +31,33 @@ class ConvertedAmountCardView: UIView {
         return view
     }()
     
-    lazy var cardDivider: UIView = {
+    private lazy var cardDivider: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         return view
     }()
     
-    lazy var currencyType: UILabel = {
+    private lazy var currencyType: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .right
         view.textColor = Styles.Color.textColor
-        //TODO: -
-        view.text = "USD"
         view.font = UIFont.appFont(type: .regular, size: 16)
         return view
     }()
     
-    lazy var convertedAmountView: UILabel = {
+    private lazy var convertedAmountView: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .left
         view.textColor = Styles.Color.textColor
-        //TODO: -
-        view.text = "0.689612"
+        view.text = "0"
         view.font = UIFont.appFont(type: .regular, size: 16)
         return view
     }()
 
-    lazy var convertedAmountTitle: UILabel = {
+    private lazy var convertedAmountTitle: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .left
@@ -70,7 +67,7 @@ class ConvertedAmountCardView: UIView {
         return view
     }()
     
-    lazy var cardView: UIView = {
+    private lazy var cardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = Styles.Color.cardColor
@@ -128,6 +125,15 @@ class ConvertedAmountCardView: UIView {
         convertedAmountView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 14).isActive = true
         convertedAmountView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -17).isActive = true
         convertedAmountView.trailingAnchor.constraint(equalTo: cardDivider.leadingAnchor, constant: 0).isActive = true
-        
+    }
+    
+    func updateTargetCurrency(_ currency: CurrencyType) {
+        currencyType.fadeTransition()
+        currencyType.text = currency.description.code
+    }
+    
+    func updateTargetCurrencySum(_ sum: String) {
+        convertedAmountView.fadeTransition()
+        convertedAmountView.text = sum
     }
 }

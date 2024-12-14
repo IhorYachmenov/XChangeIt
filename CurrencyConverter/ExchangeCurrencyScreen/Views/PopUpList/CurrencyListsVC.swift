@@ -165,6 +165,7 @@ extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource
         let data = sourceData[indexPath.row]
         cell.currencyImage.image = data.image.square
         cell.currencyDescription.text = data.description.name
+        cell.divider.isHidden = indexPath.row == (sourceData.count - 1) ? true : false
         
         return cell
     }
