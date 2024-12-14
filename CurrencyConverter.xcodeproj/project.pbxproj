@@ -12,7 +12,7 @@
 		58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */; };
 		58E5D1BB2D0C740B000E39B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1BA2D0C740B000E39B4 /* Assets.xcassets */; };
 		58E5D1BE2D0C740B000E39B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1BD2D0C740B000E39B4 /* Base */; };
-		58E5D1C82D0C7E7F000E39B4 /* CorrencyConververViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1C72D0C7E7F000E39B4 /* CorrencyConververViewController.swift */; };
+		58E5D1C82D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1C72D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift */; };
 		58E5D1CD2D0C826B000E39B4 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1CC2D0C826B000E39B4 /* UIColor+AppColors.swift */; };
 		58E5D1D62D0C8BBC000E39B4 /* ReadexPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1CF2D0C8BBC000E39B4 /* ReadexPro-Regular.ttf */; };
 		58E5D1D72D0C8BBC000E39B4 /* ReadexPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D02D0C8BBC000E39B4 /* ReadexPro-Medium.ttf */; };
@@ -22,6 +22,13 @@
 		58E5D1DB2D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D42D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf */; };
 		58E5D1DC2D0C8BBC000E39B4 /* ReadexPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58E5D1D52D0C8BBC000E39B4 /* ReadexPro-Bold.ttf */; };
 		58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1DD2D0C8C43000E39B4 /* UIFont+AppFont.swift */; };
+		58E5D1EA2D0CBD04000E39B4 /* UIViewController+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1E92D0CBD04000E39B4 /* UIViewController+Header.swift */; };
+		58E5D1ED2D0CBEEB000E39B4 /* ExchangeAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1EC2D0CBEEB000E39B4 /* ExchangeAmountView.swift */; };
+		58E5D1EF2D0CC613000E39B4 /* ConvertedAmountCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1EE2D0CC613000E39B4 /* ConvertedAmountCardView.swift */; };
+		58E5D1F12D0CC918000E39B4 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F02D0CC918000E39B4 /* UIView+Shadow.swift */; };
+		58E5D1F32D0CCFEF000E39B4 /* CurrencyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F22D0CCFEF000E39B4 /* CurrencyCardView.swift */; };
+		58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */; };
+		58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +39,7 @@
 		58E5D1BA2D0C740B000E39B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58E5D1BD2D0C740B000E39B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58E5D1BF2D0C740B000E39B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58E5D1C72D0C7E7F000E39B4 /* CorrencyConververViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrencyConververViewController.swift; sourceTree = "<group>"; };
+		58E5D1C72D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCurrencyViewController.swift; sourceTree = "<group>"; };
 		58E5D1CC2D0C826B000E39B4 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		58E5D1CF2D0C8BBC000E39B4 /* ReadexPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Regular.ttf"; sourceTree = "<group>"; };
 		58E5D1D02D0C8BBC000E39B4 /* ReadexPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Medium.ttf"; sourceTree = "<group>"; };
@@ -42,6 +49,13 @@
 		58E5D1D42D0C8BBC000E39B4 /* ReadexPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		58E5D1D52D0C8BBC000E39B4 /* ReadexPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Bold.ttf"; sourceTree = "<group>"; };
 		58E5D1DD2D0C8C43000E39B4 /* UIFont+AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFont.swift"; sourceTree = "<group>"; };
+		58E5D1E92D0CBD04000E39B4 /* UIViewController+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Header.swift"; sourceTree = "<group>"; };
+		58E5D1EC2D0CBEEB000E39B4 /* ExchangeAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeAmountView.swift; sourceTree = "<group>"; };
+		58E5D1EE2D0CC613000E39B4 /* ConvertedAmountCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedAmountCardView.swift; sourceTree = "<group>"; };
+		58E5D1F02D0CC918000E39B4 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		58E5D1F22D0CCFEF000E39B4 /* CurrencyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCardView.swift; sourceTree = "<group>"; };
+		58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Inset.swift"; sourceTree = "<group>"; };
+		58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTypeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +88,11 @@
 		58E5D1B02D0C740A000E39B4 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				58E5D1E82D0CB90C000E39B4 /* HomeScreen */,
+				58E5D1E52D0CB8EA000E39B4 /* ExchangeCurrencyScreen */,
 				58E5D1CB2D0C825A000E39B4 /* Extensions */,
 				58E5D1C62D0C7765000E39B4 /* Resources */,
 				58E5D1C52D0C770D000E39B4 /* Application */,
-				58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */,
-				58E5D1C72D0C7E7F000E39B4 /* CorrencyConververViewController.swift */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -108,6 +122,9 @@
 			children = (
 				58E5D1CC2D0C826B000E39B4 /* UIColor+AppColors.swift */,
 				58E5D1DD2D0C8C43000E39B4 /* UIFont+AppFont.swift */,
+				58E5D1E92D0CBD04000E39B4 /* UIViewController+Header.swift */,
+				58E5D1F02D0CC918000E39B4 /* UIView+Shadow.swift */,
+				58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -132,6 +149,34 @@
 				58E5D1D12D0C8BBC000E39B4 /* ReadexPro-Variable.ttf */,
 			);
 			path = ReadexPro;
+			sourceTree = "<group>";
+		};
+		58E5D1E52D0CB8EA000E39B4 /* ExchangeCurrencyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1C72D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift */,
+				58E5D1EB2D0CBEB7000E39B4 /* Views */,
+			);
+			path = ExchangeCurrencyScreen;
+			sourceTree = "<group>";
+		};
+		58E5D1E82D0CB90C000E39B4 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		58E5D1EB2D0CBEB7000E39B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1EC2D0CBEEB000E39B4 /* ExchangeAmountView.swift */,
+				58E5D1EE2D0CC613000E39B4 /* ConvertedAmountCardView.swift */,
+				58E5D1F22D0CCFEF000E39B4 /* CurrencyCardView.swift */,
+				58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +257,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */,
+				58E5D1EA2D0CBD04000E39B4 /* UIViewController+Header.swift in Sources */,
+				58E5D1EF2D0CC613000E39B4 /* ConvertedAmountCardView.swift in Sources */,
+				58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */,
+				58E5D1F12D0CC918000E39B4 /* UIView+Shadow.swift in Sources */,
 				58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */,
 				58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */,
-				58E5D1C82D0C7E7F000E39B4 /* CorrencyConververViewController.swift in Sources */,
+				58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */,
+				58E5D1F32D0CCFEF000E39B4 /* CurrencyCardView.swift in Sources */,
+				58E5D1ED2D0CBEEB000E39B4 /* ExchangeAmountView.swift in Sources */,
+				58E5D1C82D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift in Sources */,
 				58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */,
 				58E5D1CD2D0C826B000E39B4 /* UIColor+AppColors.swift in Sources */,
 			);

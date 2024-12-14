@@ -7,17 +7,25 @@
 
 import UIKit
 
+fileprivate struct Styles {
+    struct Color {
+        static let backgroundColor = UIColor.AppColor.ghostWhiteColor
+        static let whiteColor = UIColor.AppColor.whiteColor
+    }
+    
+    struct Text {
+        static let exchangeCurrencyButtonTitle = "Exchange Currency"
+    }
+}
+
 class HomeViewController: UIViewController {
     private lazy var getStartedButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "Get Started"
-//        configuration.image = UIImage(systemName: Constants.SingerTrackDetailsScreen.playButtonDefaultImgName)
-        configuration.imagePlacement = .leading
-        configuration.imagePadding = 15
-        configuration.baseForegroundColor = .white
+        configuration.title = Styles.Text.exchangeCurrencyButtonTitle
+        configuration.baseForegroundColor = Styles.Color.whiteColor
         configuration.cornerStyle = .large
         configuration.background.backgroundColor = UIColor.AppColor.waikawaGreyColor
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15)
@@ -25,13 +33,13 @@ class HomeViewController: UIViewController {
         configuration.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
             var outgoing = incoming
             outgoing.backgroundColor = .clear
-            outgoing.font = UIFont.boldSystemFont(ofSize: 20)
+            outgoing.font = UIFont.appFont(type: .medium, size: 20)
             return outgoing
         }
         view.configuration = configuration
         
         view.addAction(UIAction(handler: { [weak self] _ in
-            self?.openCurrencyConverted()
+            self?.exchangeCurrency()
         }), for: .touchUpInside)
         
         return view
@@ -40,20 +48,20 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        // Do any additional setup after loading the view.
     }
     
     private func initUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = Styles.Color.backgroundColor
         view.addSubview(getStartedButton)
         
         getStartedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         getStartedButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    private func openCurrencyConverted() {
-        let vc = CorrencyConververViewController()
-        present(vc, animated: true)
+    private func exchangeCurrency() {
+        // TODO: -
+        let vc = ExchangeCurrencyViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
