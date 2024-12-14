@@ -29,6 +29,7 @@
 		58E5D1F32D0CCFEF000E39B4 /* CurrencyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F22D0CCFEF000E39B4 /* CurrencyCardView.swift */; };
 		58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */; };
 		58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */; };
+		58E5D1FC2D0DCF4B000E39B4 /* CurrencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1FB2D0DCF4B000E39B4 /* CurrencyType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		58E5D1F22D0CCFEF000E39B4 /* CurrencyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCardView.swift; sourceTree = "<group>"; };
 		58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Inset.swift"; sourceTree = "<group>"; };
 		58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTypeView.swift; sourceTree = "<group>"; };
+		58E5D1FB2D0DCF4B000E39B4 /* CurrencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				58E5D1C72D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift */,
 				58E5D1EB2D0CBEB7000E39B4 /* Views */,
+				58E5D1FA2D0DCF3A000E39B4 /* Models */,
 			);
 			path = ExchangeCurrencyScreen;
 			sourceTree = "<group>";
@@ -177,6 +180,14 @@
 				58E5D1F62D0CEA88000E39B4 /* CurrencyTypeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		58E5D1FA2D0DCF3A000E39B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58E5D1FB2D0DCF4B000E39B4 /* CurrencyType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			files = (
 				58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */,
 				58E5D1EA2D0CBD04000E39B4 /* UIViewController+Header.swift in Sources */,
+				58E5D1FC2D0DCF4B000E39B4 /* CurrencyType.swift in Sources */,
 				58E5D1EF2D0CC613000E39B4 /* ConvertedAmountCardView.swift in Sources */,
 				58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */,
 				58E5D1F12D0CC918000E39B4 /* UIView+Shadow.swift in Sources */,
