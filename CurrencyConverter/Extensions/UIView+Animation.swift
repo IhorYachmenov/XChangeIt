@@ -23,5 +23,7 @@ extension UIView {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.25, initialSpringVelocity: 6) {
             self.transform = CGAffineTransform.identity
         }
+        
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
 }

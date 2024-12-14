@@ -100,6 +100,6 @@ final class ConvertCurrencyView: UIView {
         convertButton.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         convertButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         convertButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        convertButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+        convertButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -(16 + UIApplication.windowInset.bottom)).isActive = true
     }
 }

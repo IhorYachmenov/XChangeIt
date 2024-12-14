@@ -150,6 +150,7 @@ final class CurrencyListViewController: UIViewController {
     
     @objc
     private func closeScreen() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
         self.dismiss(animated: true)
     }
 }

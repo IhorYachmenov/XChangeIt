@@ -117,7 +117,7 @@ final class ExchangeCurrencyViewController: UIViewController {
         footerPanel.topAnchor.constraint(greaterThanOrEqualTo: inputPanel.bottomAnchor).isActive = true
         footerPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         footerPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        footerPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -UIApplication.windowInset.bottom).isActive = true
+        footerPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     @objc

@@ -110,6 +110,7 @@ final class CurrencyTypeView: UIView {
     
     @objc
     private func handleViewClock() {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
         showCurrencyList?(sourceCurrency, currentCurrency)
     }
     
