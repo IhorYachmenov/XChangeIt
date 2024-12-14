@@ -94,7 +94,7 @@ fileprivate class CurrencyViewTableViewCell: UITableViewCell {
     }
 }
 
-class CurrencyListViewController: UIViewController {
+final class CurrencyListViewController: UIViewController {
     var selectedValue: ((_ value: CurrencyType) -> ())?
     
     private var sourceData: [CurrencyType] = [] {

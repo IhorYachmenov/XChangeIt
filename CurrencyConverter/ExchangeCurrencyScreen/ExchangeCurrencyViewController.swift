@@ -23,22 +23,22 @@ fileprivate struct Styles {
     }
 }
 
-class ExchangeCurrencyViewController: UIViewController {
+final class ExchangeCurrencyViewController: UIViewController {
     let defaultSourceCurrency: CurrencyType = .unitedStatesDollar
     let defaultTargetCurrency: CurrencyType = .euro
     
-    lazy var exchangeAmountView: ExchangeAmountView = {
+    private lazy var exchangeAmountView: ExchangeAmountView = {
         let view = ExchangeAmountView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency)
         return view
     }()
     
-    lazy var convertedAmountCardView: ConvertedAmountCardView = {
+    private lazy var convertedAmountCardView: ConvertedAmountCardView = {
         let view = ConvertedAmountCardView()
         view.updateTargetCurrency(defaultTargetCurrency)
         return view
     }()
     
-    lazy var currencyCardView: CurrencyCardView = {
+    private lazy var currencyCardView: CurrencyCardView = {
         let view = CurrencyCardView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency, defaultTargetCurrency: defaultTargetCurrency)
         view.showListOfCurrencies = { [weak self] identifier, currency in
             self?.showListOfCurrencies(isSourceCurrency: identifier, currentCurrency: currency)
@@ -46,6 +46,14 @@ class ExchangeCurrencyViewController: UIViewController {
         view.newTargetCurrency = { [weak self] targetCurrency, sourceCurrency in
             self?.convertedAmountCardView.updateTargetCurrency(targetCurrency)
             self?.exchangeAmountView.updateCurrencySymbol(currency: sourceCurrency)
+        }
+        return view
+    }()
+    
+    private lazy var inputPanel: InputPannel = {
+        let view = InputPannel()
+        view.handleButtonClickAction = { [weak self] symbol in
+            self?.handleKeyboardButtonClick(symbol: symbol)
         }
         return view
     }()
@@ -66,6 +74,7 @@ class ExchangeCurrencyViewController: UIViewController {
         view.addSubview(exchangeAmountView)
         view.addSubview(convertedAmountCardView)
         view.addSubview(currencyCardView)
+        view.addSubview(inputPanel)
         
         let viewTopInset: CGFloat = 25 + UIApplication.windowInset.top + (navigationController?.view.safeAreaInsets.top ?? 0)
         
@@ -80,6 +89,14 @@ class ExchangeCurrencyViewController: UIViewController {
         currencyCardView.topAnchor.constraint(equalTo: convertedAmountCardView.bottomAnchor, constant: 16).isActive = true
         currencyCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         currencyCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        // TODO: botton constaint
+        inputPanel.topAnchor.constraint(equalTo: currencyCardView.bottomAnchor, constant: 11).isActive = true
+        inputPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        inputPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        
+        inputPanel.layer.borderColor = UIColor.red.cgColor
+        inputPanel.layer.borderWidth = 2
     }
     
     @objc
@@ -110,5 +127,9 @@ class ExchangeCurrencyViewController: UIViewController {
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
         present(navigationVC, animated: true, completion: nil)
+    }
+    
+    private func handleKeyboardButtonClick(symbol: KeyboardButtonType) {
+        print(symbol.symbol)
     }
 }
