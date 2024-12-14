@@ -58,13 +58,13 @@ final class ExchangeCurrencyViewController: UIViewController {
         return view
     }()
     
-    private lazy var footerPanel: ConvertCurrencyView = {
-        let view = ConvertCurrencyView()
-        view.handleButtonClickAction = { [weak self] in
-            
-        }
-        return view
-    }()
+//    private lazy var footerPanel: ConvertCurrencyView = {
+//        let view = ConvertCurrencyView()
+//        view.handleButtonClickAction = { [weak self] in
+//            
+//        }
+//        return view
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +83,7 @@ final class ExchangeCurrencyViewController: UIViewController {
         view.addSubview(convertedAmountCardView)
         view.addSubview(currencyCardView)
         view.addSubview(inputPanel)
-        view.addSubview(footerPanel)
+//        view.addSubview(footerPanel)
         
         let topSafeArea: CGFloat = UIApplication.windowInset.top + (navigationController?.view.safeAreaInsets.top ?? 0)
         let viewDefaultTopInset: CGFloat = 25 + topSafeArea
@@ -113,11 +113,12 @@ final class ExchangeCurrencyViewController: UIViewController {
         inputPanel.topAnchor.constraint(equalTo: currencyCardView.bottomAnchor, constant: 11).isActive = true
         inputPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         inputPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        inputPanel.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor).isActive = true
         
-        footerPanel.topAnchor.constraint(greaterThanOrEqualTo: inputPanel.bottomAnchor).isActive = true
-        footerPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        footerPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        footerPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        footerPanel.topAnchor.constraint(greaterThanOrEqualTo: inputPanel.bottomAnchor).isActive = true
+//        footerPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        footerPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        footerPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     @objc
