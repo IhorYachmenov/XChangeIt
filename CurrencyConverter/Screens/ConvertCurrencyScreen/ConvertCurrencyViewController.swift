@@ -135,21 +135,20 @@ final class ConvertCurrencyViewController: UIViewController {
     
     private func initBL() {
         handleUpdateNewCurrencies(source: defaultSourceCurrency, target: defaultTargetCurrency)
-        viewModel?.observeKeyboardInputChanges = { [weak self] result in
-            switch result {
-            case .success(let amount):
-                self?.convertAmountView.updateCurrencyAmount(amount: amount)
-            case .failure(_):
-                break
-            }
+        viewModel?.observeKeyboardInputChanges = { [weak self] amount in
+            self?.convertAmountView.updateCurrencyAmount(amount: amount)
         }
         
-        viewModel?.observeConvertedData = { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.receivedAmountCardView.updateTargetCurrencySum(data)
-            case .failure(_):
-                break
+        viewModel?.observeDataState = { [weak self] state in
+            switch state {
+            case .successState(amount: let amount):
+                self?.receivedAmountCardView.updateTargetCurrencySum(amount)
+            case .failureState(error: let error):
+                self?.receivedAmountCardView.showErrorTargetCurrencyState(error)
+            case .loadingState:
+                self?.receivedAmountCardView.showLoadingTargetCurrencyState()
+            case .defaultState:
+                self?.receivedAmountCardView.showEmptyTargetCurrencyState()
             }
         }
     }

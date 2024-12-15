@@ -26,16 +26,25 @@ final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
     
     private var enteredValue: String = DigitalKeyboardSymbols.zero.string {
         didSet {
-            observeKeyboardInputChanges?(.success(enteredValue))
+            observeKeyboardInputChanges?(enteredValue)
             detectIfInputCurrencyDidChanged()
         }
     }
     
-    // MARK: Public API
-    var observeKeyboardInputChanges: ((Result<String, any Error>) -> ())?
-    var observeConvertedData: ((Result<String, any Error>) -> ())?
+    private let service: ConvertCurrencyServiceInterface
     
-    init() {}
+    private var dataState: ConvertCurrencyVMDataState = .defaultState {
+        didSet {
+            observeDataState?(dataState)
+        }
+    }
+    // MARK: Public API
+    var observeKeyboardInputChanges: ((_ amount: String) -> ())?
+    var observeDataState: ((_ state: ConvertCurrencyVMDataState) -> ())?
+    
+    init(service: ConvertCurrencyServiceInterface) {
+        self.service = service
+    }
     
     deinit {
         print(#function, "ConvertCurrencyViewModel")
@@ -117,10 +126,5 @@ fileprivate extension ConvertCurrencyViewModel {
     func handleNewCurrency() {
         guard let sourceCurrency = actualCurrencies.source, let targetCurrency = actualCurrencies.target else { return }
         print("Convert \(sourceCurrency.description.code)", enteredValueDigital," to \(targetCurrency.description.code)")
-    }
-    
-    // TODO: - ...
-    private func handleReceiveState(data: String) {
-        observeConvertedData?(.success(data))
     }
 }

@@ -9,9 +9,8 @@ import Foundation
 
 final class ConvertCurrencyConfigurator {
     class func initializeConvertCurrencyVC(navigationDelegate: ConvertCurrencyVCNavigationDelegate) -> ConvertCurrencyViewController {
-//        let service = ClockInClockOutListDataService()
-//        let viewModel = EchangeCurrencyViewModel(service: service)
-        let viewModel = ConvertCurrencyViewModel()
+        let service = ConvertCurrencyService()
+        let viewModel = ConvertCurrencyViewModel(service: service)
         let vc = ConvertCurrencyViewController()
         vc.navigationDelegate = navigationDelegate
         vc.viewModel = viewModel

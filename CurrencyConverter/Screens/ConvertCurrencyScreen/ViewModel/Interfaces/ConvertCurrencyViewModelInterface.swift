@@ -81,10 +81,16 @@ enum CurrencyType {
     ]
 }
 
+enum ConvertCurrencyVMDataState {
+    case successState(amount: String)
+    case failureState(error: String)
+    case loadingState
+    case defaultState
+}
+
 protocol ConvertCurrencyViewModelInterface: AnyObject {
-    var observeKeyboardInputChanges: ((Result<String, Error>) -> ())? { get set }
-    // TODO:  String is test solution
-    var observeConvertedData: ((Result<String, Error>) -> ())? { get set }
+    var observeKeyboardInputChanges: ((_ amount: String) -> ())? { get set }
+    var observeDataState: ((_ state: ConvertCurrencyVMDataState) -> ())? { get set }
     
     func handleKeyboardInput(symbol: KeyboardButtonType)
     func updateCurrenciesTypes(source: CurrencyType, target: CurrencyType)

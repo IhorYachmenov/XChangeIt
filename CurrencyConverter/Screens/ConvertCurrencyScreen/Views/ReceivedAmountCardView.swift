@@ -12,6 +12,7 @@ fileprivate struct Styles {
         static let cardColor = UIColor.AppColor.whiteColor
         static let textColor = UIColor.AppColor.midnightExpressColor
         static let commonGrayColor = UIColor.AppColor.waikawaGreyColor
+        static let errorColor = UIColor.AppColor.freeSpeechRed
     }
     
     struct Text {
@@ -52,7 +53,6 @@ final class ReceivedAmountCardView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textAlignment = .left
         view.textColor = Styles.Color.textColor
-        view.text = "0"
         view.font = UIFont.appFont(type: .regular, size: 16)
         return view
     }()
@@ -79,6 +79,7 @@ final class ReceivedAmountCardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
+        showEmptyTargetCurrencyState()
     }
     
     required init?(coder: NSCoder) {
@@ -130,13 +131,35 @@ final class ReceivedAmountCardView: UIView {
         convertedAmountView.heightAnchor.constraint(equalToConstant: 17).isActive = true
     }
     
+    private func updateReceivedAmountViewText(text: String, errorState: Bool = false) {
+        convertedAmountView.fadeTransition()
+        convertedAmountView.text = text
+        convertedAmountView.textColor = errorState ? Styles.Color.errorColor : Styles.Color.textColor
+    }
+    
+    //MARK: -  PUBLIC API
+    
+    /// Local actions code
     func updateTargetCurrency(_ currency: CurrencyType) {
         currencyType.fadeTransition()
         currencyType.text = currency.description.code
     }
     
+    /// Networking actions code
     func updateTargetCurrencySum(_ sum: String) {
-        convertedAmountView.fadeTransition()
-        convertedAmountView.text = sum
+        updateReceivedAmountViewText(text: sum)
+    }
+    
+    func showEmptyTargetCurrencyState() {
+        updateReceivedAmountViewText(text: "0")
+    }
+    
+    func showLoadingTargetCurrencyState() {
+        // TODO: - update later with loader
+        updateReceivedAmountViewText(text: "Loading...")
+    }
+    
+    func showErrorTargetCurrencyState(_ error: String) {
+        updateReceivedAmountViewText(text: error, errorState: true)
     }
 }

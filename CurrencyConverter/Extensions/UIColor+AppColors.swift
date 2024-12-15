@@ -16,5 +16,6 @@ extension UIColor {
         static let ghostWhiteColor = UIColor(named: "Ghost White")
         static let whiteColor = UIColor(named: "App White")
         static let hawkesBlue = UIColor(named: "Hawkes Blue")
+        static let freeSpeechRed = UIColor(named: "Free Speech Red")
     }
 }
