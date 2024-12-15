@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58AD52B22D0F249A00986CA6 /* String+KeyboardInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52B12D0F249A00986CA6 /* String+KeyboardInput.swift */; };
+		58AD52B42D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52B32D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift */; };
 		58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B12D0C740A000E39B4 /* AppDelegate.swift */; };
 		58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B32D0C740A000E39B4 /* SceneDelegate.swift */; };
 		58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58AD52B12D0F249A00986CA6 /* String+KeyboardInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KeyboardInput.swift"; sourceTree = "<group>"; };
+		58AD52B32D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardSymbols.swift; sourceTree = "<group>"; };
 		58E5D1AE2D0C740A000E39B4 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E5D1B12D0C740A000E39B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58E5D1B32D0C740A000E39B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				58E5D1F42D0CD02B000E39B4 /* UIApplication+Inset.swift */,
 				58E5D2002D0DF11F000E39B4 /* UIImageView+Animation.swift */,
 				58E5D2022D0DF197000E39B4 /* UIView+Animation.swift */,
+				58AD52B12D0F249A00986CA6 /* String+KeyboardInput.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			children = (
 				58E5D2052D0E08B4000E39B4 /* InputPannel.swift */,
 				58E5D2072D0E0D16000E39B4 /* KeyboardButton.swift */,
+				58AD52B32D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift */,
 			);
 			path = InputPanel;
 			sourceTree = "<group>";
@@ -338,6 +344,8 @@
 				58E5D2082D0E0D16000E39B4 /* KeyboardButton.swift in Sources */,
 				58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */,
 				58E5D1F12D0CC918000E39B4 /* UIView+Shadow.swift in Sources */,
+				58AD52B42D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift in Sources */,
+				58AD52B22D0F249A00986CA6 /* String+KeyboardInput.swift in Sources */,
 				58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */,
 				58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */,
 				58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */,

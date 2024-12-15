@@ -8,27 +8,26 @@
 import Foundation
 
 final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
+    private let characterLimit: Int = 10
+    private let symbolsAfterDot: Int = 2
+    
     private var targetCurrency: CurrencyType? {
         didSet {
-            handleNewValue()
+            handleNewUserCurrency()
         }
     }
     
     private var enteredValueDigital: Float = 0
     
-    private var enteredValue: String = "" {
+    private var enteredValue: String = DigitalKeyboardSymbols.zero.string {
         didSet {
-            if enteredValue.isEmpty {
-                observeInputData?(.success("0"))
-            } else {
-                observeInputData?(.success(enteredValue))
-            }
-            handleNewValue()
+            observeInputData?(.success(enteredValue))
+            handleNewUserCurrency()
         }
     }
     
     var observeInputData: ((Result<String, any Error>) -> ())?
-    var observeReceivedData: ((Result<String, Error>) -> ())?
+    var observeReceivedData: ((Result<String, any Error>) -> ())?
     
     init() {}
     
@@ -36,34 +35,59 @@ final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
         print(#function, "EchangeCurrencyViewModel")
     }
     
-    func handleEnteredUserCurrencyValue(symbol: KeyboardButtonType) {
-        switch symbol {
-        case .symbol(let symbol):
-            if symbol == "0" {
-                if !enteredValue.isEmpty && enteredValue.first != "0" {
-                    enteredValue.append(symbol)
-                } else {
-                    if enteredValue.last != "0" {
-                        enteredValue.append(symbol)
-                    }
-                }
-            } else {
-                enteredValue.append(symbol)
-            }
-        case .dot:
-            guard !enteredValue.contains(symbol.symbol) else { return }
-            enteredValue.append(symbol.symbol)
-        case .delete:
-            guard !enteredValue.isEmpty else { return }
-            enteredValue.removeLast()
-        }
+    func handleKeyboardInput(symbol: KeyboardButtonType) {
+        parseKeyboardInputToStringCurrency(symbol: symbol)
     }
     
     func updateTargetCurrency(currency: CurrencyType) {
         targetCurrency = currency
     }
+}
+
+// MARK: Logic of handling keyboard input
+extension EchangeCurrencyViewModel {
+    fileprivate func allowKeyoardInput(symbol: KeyboardButtonType) -> Bool {
+        let checkCharCount = { [weak self]  () -> Bool in
+            guard let self = self else { return false }
+            return self.enteredValue.count < characterLimit ? true : false
+        }
+        
+        switch symbol {
+        case .symbol(_):
+            return checkCharCount()
+        case .dot:
+            return checkCharCount()
+        case .delete:
+            return true
+        }
+    }
     
-    private func handleNewValue() {
+    fileprivate func parseKeyboardInputToStringCurrency(symbol: KeyboardButtonType) {
+        guard allowKeyoardInput(symbol: symbol) else { return }
+        switch symbol {
+        case .symbol(let symbol):
+            guard enteredValue.charactersAfterDot < symbolsAfterDot else { return }
+            if enteredValue.firstZero && !enteredValue.containsDot {
+                enteredValue = symbol.string
+            } else {
+                enteredValue.append(symbol.rawValue)
+            }
+        case .dot:
+            guard !enteredValue.containsDot else { return }
+            enteredValue.append(symbol.symbol)
+        case .delete:
+            guard !enteredValue.isEmpty && enteredValue.count != 1 else {
+                enteredValue = DigitalKeyboardSymbols.zero.string
+                return
+            }
+            enteredValue.removeLast()
+        }
+    }
+}
+
+// MARK: Detecting new type of currency value
+extension EchangeCurrencyViewModel {
+    fileprivate func handleNewUserCurrency() {
         guard let targetCurrency = targetCurrency else { return }
         
         if let lastCharacter = enteredValue.last, lastCharacter == "." {
@@ -73,11 +97,11 @@ final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
             if enteredValueDigital != newCurrency {
                 if newCurrency.isZero {
                     print(#function, targetCurrency.description.sign, newCurrency)
-                    handleReceiveState(data: "0")
+                    
                 } else {
                     print(#function, targetCurrency.description.sign, newCurrency)
                     enteredValueDigital = newCurrency
-                    handleReceiveState(data: String(newCurrency))
+                    
                 }
             }
             

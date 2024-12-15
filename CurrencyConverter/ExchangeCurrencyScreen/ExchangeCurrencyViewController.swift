@@ -56,7 +56,7 @@ final class ExchangeCurrencyViewController: UIViewController {
     private lazy var inputPanel: InputPannel = {
         let view = InputPannel()
         view.handleButtonClickAction = { [weak self] symbol in
-            self?.viewModel.handleEnteredUserCurrencyValue(symbol: symbol)
+            self?.viewModel.handleKeyboardInput(symbol: symbol)
         }
         return view
     }()

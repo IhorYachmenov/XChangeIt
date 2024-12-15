@@ -86,6 +86,6 @@ protocol EchangeCurrencyViewModelInterface: AnyObject {
     // TODO: Test solution
     var observeReceivedData: ((Result<String, Error>) -> ())? { get set }
     
-    func handleEnteredUserCurrencyValue(symbol: KeyboardButtonType)
+    func handleKeyboardInput(symbol: KeyboardButtonType)
     func updateTargetCurrency(currency: CurrencyType)
 }

@@ -7,14 +7,15 @@
 
 import UIKit
 
+fileprivate typealias DKS = DigitalKeyboardSymbols
 final class InputPannel: UIView {
     var handleButtonClickAction: ((_ type: KeyboardButtonType) -> ())?
     
     private var keyboardButtons: [[KeyboardButtonType]] = [
-        [KeyboardButtonType.symbol(symbol: "1"), KeyboardButtonType.symbol(symbol: "2"), KeyboardButtonType.symbol(symbol: "3")],
-        [KeyboardButtonType.symbol(symbol: "4"), KeyboardButtonType.symbol(symbol: "5"), KeyboardButtonType.symbol(symbol: "6")],
-        [KeyboardButtonType.symbol(symbol: "7"), KeyboardButtonType.symbol(symbol: "8"), KeyboardButtonType.symbol(symbol: "9")],
-        [KeyboardButtonType.dot, KeyboardButtonType.symbol(symbol: "0"), KeyboardButtonType.delete]
+        [KeyboardButtonType.symbol(symbol: DKS.one), KeyboardButtonType.symbol(symbol: DKS.two), KeyboardButtonType.symbol(symbol: DKS.three)],
+        [KeyboardButtonType.symbol(symbol: DKS.four), KeyboardButtonType.symbol(symbol: DKS.five), KeyboardButtonType.symbol(symbol: DKS.six)],
+        [KeyboardButtonType.symbol(symbol: DKS.seven), KeyboardButtonType.symbol(symbol: DKS.eight), KeyboardButtonType.symbol(symbol: DKS.nine)],
+        [KeyboardButtonType.dot, KeyboardButtonType.symbol(symbol: DKS.zero), KeyboardButtonType.delete]
     ]
     
     private lazy var keyboardStackContainer: UIStackView = {

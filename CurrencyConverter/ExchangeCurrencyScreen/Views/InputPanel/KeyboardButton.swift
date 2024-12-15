@@ -24,14 +24,14 @@ fileprivate struct Styles {
 }
 
 enum KeyboardButtonType {
-    case symbol(symbol: String)
+    case symbol(symbol: DigitalKeyboardSymbols)
     case dot
     case delete
     
     var symbol: String {
         return switch self {
         case .symbol(let symbol):
-            symbol
+            symbol.string
         case .dot:
             "."
         case .delete:
@@ -94,7 +94,7 @@ final class KeyboardButton: UIButton {
     
         switch keyboardButtonType {
         case .symbol(let symbol):
-            initButtonViewTitle(symbol: symbol)
+            initButtonViewTitle(symbol: symbol.string)
         case .dot:
             initButtonViewTitle(symbol: keyboardButtonType.symbol)
         case .delete:
