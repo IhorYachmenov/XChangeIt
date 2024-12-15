@@ -137,7 +137,7 @@
 				58AD52BC2D0F811800986CA6 /* AppContext */,
 				58AD52B52D0F7A7E00986CA6 /* Navigation */,
 				58E5D1E82D0CB90C000E39B4 /* HomeScreen */,
-				58E5D1E52D0CB8EA000E39B4 /* ExchangeCurrencyScreen */,
+				58E5D1E52D0CB8EA000E39B4 /* ConvertCurrencyScreen */,
 				58E5D1CB2D0C825A000E39B4 /* Extensions */,
 				58E5D1C62D0C7765000E39B4 /* Resources */,
 				58E5D1C52D0C770D000E39B4 /* Application */,
@@ -202,7 +202,7 @@
 			path = ReadexPro;
 			sourceTree = "<group>";
 		};
-		58E5D1E52D0CB8EA000E39B4 /* ExchangeCurrencyScreen */ = {
+		58E5D1E52D0CB8EA000E39B4 /* ConvertCurrencyScreen */ = {
 			isa = PBXGroup;
 			children = (
 				58E5D1C72D0C7E7F000E39B4 /* ConvertCurrencyViewController.swift */,
@@ -211,7 +211,7 @@
 				58E5D2102D0E3C49000E39B4 /* ViewModel */,
 				58E5D1FA2D0DCF3A000E39B4 /* Models */,
 			);
-			path = ExchangeCurrencyScreen;
+			path = ConvertCurrencyScreen;
 			sourceTree = "<group>";
 		};
 		58E5D1E82D0CB90C000E39B4 /* HomeScreen */ = {
