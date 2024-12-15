@@ -24,6 +24,8 @@ fileprivate struct Styles {
 }
 
 final class ExchangeCurrencyViewController: UIViewController {
+    let viewModel: EchangeCurrencyViewModelInterface = EchangeCurrencyViewModel()
+    
     let defaultSourceCurrency: CurrencyType = .unitedStatesDollar
     let defaultTargetCurrency: CurrencyType = .euro
     
@@ -46,6 +48,7 @@ final class ExchangeCurrencyViewController: UIViewController {
         view.newTargetCurrency = { [weak self] targetCurrency, sourceCurrency in
             self?.convertedAmountCardView.updateTargetCurrency(targetCurrency)
             self?.exchangeAmountView.updateCurrencySymbol(currency: sourceCurrency)
+            self?.handleUpdateNewCurrency(newCurrency: sourceCurrency)
         }
         return view
     }()
@@ -53,11 +56,12 @@ final class ExchangeCurrencyViewController: UIViewController {
     private lazy var inputPanel: InputPannel = {
         let view = InputPannel()
         view.handleButtonClickAction = { [weak self] symbol in
-            self?.handleFooterConverAction()
+            self?.viewModel.handleEnteredUserCurrencyValue(symbol: symbol)
         }
         return view
     }()
     
+    // TODO: remove later if it wouldn't required by BL
 //    private lazy var footerPanel: ConvertCurrencyView = {
 //        let view = ConvertCurrencyView()
 //        view.handleButtonClickAction = { [weak self] in
@@ -69,6 +73,7 @@ final class ExchangeCurrencyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        initBL()
     }
     
     deinit {
@@ -83,6 +88,7 @@ final class ExchangeCurrencyViewController: UIViewController {
         view.addSubview(convertedAmountCardView)
         view.addSubview(currencyCardView)
         view.addSubview(inputPanel)
+        // TODO: remove later if it wouldn't required by BL
 //        view.addSubview(footerPanel)
         
         let topSafeArea: CGFloat = UIApplication.windowInset.top + (navigationController?.view.safeAreaInsets.top ?? 0)
@@ -115,15 +121,32 @@ final class ExchangeCurrencyViewController: UIViewController {
         inputPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         inputPanel.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor).isActive = true
         
+        // TODO: remove later if it wouldn't required by BL
 //        footerPanel.topAnchor.constraint(greaterThanOrEqualTo: inputPanel.bottomAnchor).isActive = true
 //        footerPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
 //        footerPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 //        footerPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    @objc
-    private func backButtonAction() {
-        navigationController?.popViewController(animated: true)
+    private func initBL() {
+        handleUpdateNewCurrency(newCurrency: defaultTargetCurrency)
+        viewModel.observeInputData = { [weak self] result in
+            switch result {
+            case .success(let amount):
+                self?.exchangeAmountView.updateCurrencyAmount(amount: amount)
+            case .failure(_):
+                break
+            }
+        }
+        
+        viewModel.observeReceivedData = { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.convertedAmountCardView.updateTargetCurrencySum(data)
+            case .failure(_):
+                break
+            }
+        }
     }
     
     private func showListOfCurrencies(isSourceCurrency: Bool, currentCurrency: CurrencyType) {
@@ -150,12 +173,13 @@ final class ExchangeCurrencyViewController: UIViewController {
         }
         present(navigationVC, animated: true, completion: nil)
     }
-    // TODO: -
-    private func handleKeyboardButtonClick(symbol: KeyboardButtonType) {
-        print(symbol.symbol)
+    
+    @objc
+    private func backButtonAction() {
+        navigationController?.popViewController(animated: true)
     }
     
-    private func handleFooterConverAction() {
-        print(#function)
+    private func handleUpdateNewCurrency(newCurrency: CurrencyType) {
+        viewModel.updateTargetCurrency(currency: newCurrency)
     }
 }

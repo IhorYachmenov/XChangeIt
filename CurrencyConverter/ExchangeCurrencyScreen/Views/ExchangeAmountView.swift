@@ -20,7 +20,7 @@ fileprivate struct Styles {
 
 final class ExchangeAmountView: UIView {
     private var defaultSourceCurrency: CurrencyType
-    private var currencySum: String = "1.000"
+    private var currencySum: String = "0"
     
     private lazy var title: UILabel = {
         let view = UILabel()
@@ -72,13 +72,20 @@ final class ExchangeAmountView: UIView {
     }
     
     
-    private func updateCurrencySumUI() {
-        sum.fadeTransition()
+    private func updateCurrencySumUI(animate: Bool = true) {
+        if animate {
+            sum.fadeTransition()
+        }
         sum.text = "\(defaultSourceCurrency.description.sign)\(currencySum)"
     }
     
     func updateCurrencySymbol(currency: CurrencyType) {
         defaultSourceCurrency = currency
         updateCurrencySumUI()
+    }
+    
+    func updateCurrencyAmount(amount: String) {
+        currencySum = amount
+        updateCurrencySumUI(animate: false)
     }
 }

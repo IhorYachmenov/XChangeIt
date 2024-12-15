@@ -1,8 +1,8 @@
 //
-//  CurrencyType.swift
+//  EchangeCurrencyViewModelInterface.swift
 //  CurrencyConverter
 //
-//  Created by Ice on 14.12.2024.
+//  Created by Ice on 15.12.2024.
 //
 
 import UIKit
@@ -79,4 +79,13 @@ enum CurrencyType {
         CurrencyType.swedishKrona,
         CurrencyType.polishZloty
     ]
+}
+
+protocol EchangeCurrencyViewModelInterface: AnyObject {
+    var observeInputData: ((Result<String, Error>) -> ())? { get set }
+    // TODO: Test solution
+    var observeReceivedData: ((Result<String, Error>) -> ())? { get set }
+    
+    func handleEnteredUserCurrencyValue(symbol: KeyboardButtonType)
+    func updateTargetCurrency(currency: CurrencyType)
 }
