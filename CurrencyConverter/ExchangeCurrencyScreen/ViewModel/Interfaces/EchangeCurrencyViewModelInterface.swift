@@ -82,10 +82,10 @@ enum CurrencyType {
 }
 
 protocol EchangeCurrencyViewModelInterface: AnyObject {
-    var observeInputData: ((Result<String, Error>) -> ())? { get set }
-    // TODO: Test solution
-    var observeReceivedData: ((Result<String, Error>) -> ())? { get set }
+    var observeKeyboardInputChanges: ((Result<String, Error>) -> ())? { get set }
+    // TODO:  String is test solution
+    var observeConvertedData: ((Result<String, Error>) -> ())? { get set }
     
     func handleKeyboardInput(symbol: KeyboardButtonType)
-    func updateTargetCurrency(currency: CurrencyType)
+    func updateCurrenciesTypes(source: CurrencyType, target: CurrencyType)
 }

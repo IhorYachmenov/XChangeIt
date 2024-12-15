@@ -115,9 +115,9 @@ final class CurrencyListViewController: UIViewController {
         return view
     }()
     
-    init(currentCurrency: CurrencyType) {
+    init(currentCurrency: CurrencyType, oppositeCurrency: CurrencyType) {
         super.init(nibName: nil, bundle: nil)
-        sourceData = initSourceData(currentCurrency)
+        sourceData = initSourceData(currentCurrency, oppositeCurrency)
     }
     
     required init?(coder: NSCoder) {
@@ -179,9 +179,9 @@ extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    private func initSourceData(_ currentCurrency: CurrencyType) -> [CurrencyType] {
+    private func initSourceData(_ currentCurrency: CurrencyType, _ oppositeCurrency: CurrencyType) -> [CurrencyType] {
         var sourceData = CurrencyType.listOfAll
-        sourceData.removeAll(where: { $0 == currentCurrency })
+        sourceData.removeAll(where: { $0 == currentCurrency || $0 == oppositeCurrency })
         return sourceData
     }
 }

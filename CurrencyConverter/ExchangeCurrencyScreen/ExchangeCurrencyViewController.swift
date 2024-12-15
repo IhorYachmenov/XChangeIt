@@ -42,13 +42,13 @@ final class ExchangeCurrencyViewController: UIViewController {
     
     private lazy var currencyCardView: CurrencyCardView = {
         let view = CurrencyCardView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency, defaultTargetCurrency: defaultTargetCurrency)
-        view.showListOfCurrencies = { [weak self] identifier, currency in
-            self?.showListOfCurrencies(isSourceCurrency: identifier, currentCurrency: currency)
+        view.showListOfCurrencies = { [weak self] identifier, currency, oppositeCurrency in
+            self?.showListOfCurrencies(isSourceCurrency: identifier, currentCurrency: currency, oppositeCurrency: oppositeCurrency)
         }
         view.newTargetCurrency = { [weak self] targetCurrency, sourceCurrency in
             self?.convertedAmountCardView.updateTargetCurrency(targetCurrency)
             self?.exchangeAmountView.updateCurrencySymbol(currency: sourceCurrency)
-            self?.handleUpdateNewCurrency(newCurrency: sourceCurrency)
+            self?.handleUpdateNewCurrencies(source: sourceCurrency, target: targetCurrency)
         }
         return view
     }()
@@ -129,8 +129,8 @@ final class ExchangeCurrencyViewController: UIViewController {
     }
     
     private func initBL() {
-        handleUpdateNewCurrency(newCurrency: defaultTargetCurrency)
-        viewModel.observeInputData = { [weak self] result in
+        handleUpdateNewCurrencies(source: defaultSourceCurrency, target: defaultTargetCurrency)
+        viewModel.observeKeyboardInputChanges = { [weak self] result in
             switch result {
             case .success(let amount):
                 self?.exchangeAmountView.updateCurrencyAmount(amount: amount)
@@ -139,7 +139,7 @@ final class ExchangeCurrencyViewController: UIViewController {
             }
         }
         
-        viewModel.observeReceivedData = { [weak self] result in
+        viewModel.observeConvertedData = { [weak self] result in
             switch result {
             case .success(let data):
                 self?.convertedAmountCardView.updateTargetCurrencySum(data)
@@ -149,15 +149,22 @@ final class ExchangeCurrencyViewController: UIViewController {
         }
     }
     
-    private func showListOfCurrencies(isSourceCurrency: Bool, currentCurrency: CurrencyType) {
-        let currenciesVC = CurrencyListViewController(currentCurrency: currentCurrency)
+    private func showListOfCurrencies(isSourceCurrency: Bool, currentCurrency: CurrencyType, oppositeCurrency: CurrencyType) {
+        let currenciesVC = CurrencyListViewController(currentCurrency: currentCurrency, oppositeCurrency: oppositeCurrency)
         currenciesVC.selectedValue = { [weak self] currency in
+            guard let self = self else { return }
             if isSourceCurrency {
-                self?.currencyCardView.sourceCurrency.updateCurrency(currency)
-                self?.exchangeAmountView.updateCurrencySymbol(currency: currency)
+                currencyCardView.sourceCurrency.updateCurrency(currency)
+                exchangeAmountView.updateCurrencySymbol(currency: currency)
+                
+                let targetCurrency = currencyCardView.targetCurrency.currentCurrency
+                handleUpdateNewCurrencies(source: currency, target: targetCurrency)
             } else {
-                self?.currencyCardView.targetCurrency.updateCurrency(currency)
-                self?.convertedAmountCardView.updateTargetCurrency(currency)
+                currencyCardView.targetCurrency.updateCurrency(currency)
+                convertedAmountCardView.updateTargetCurrency(currency)
+                
+                let sourceCurrency = currencyCardView.sourceCurrency.currentCurrency
+                handleUpdateNewCurrencies(source: sourceCurrency, target: currency)
             }
         }
         
@@ -179,7 +186,7 @@ final class ExchangeCurrencyViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    private func handleUpdateNewCurrency(newCurrency: CurrencyType) {
-        viewModel.updateTargetCurrency(currency: newCurrency)
+    private func handleUpdateNewCurrencies(source: CurrencyType, target: CurrencyType) {
+        viewModel.updateCurrenciesTypes(source: source, target: target)
     }
 }
