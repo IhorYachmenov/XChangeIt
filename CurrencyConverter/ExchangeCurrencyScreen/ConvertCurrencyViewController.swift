@@ -23,36 +23,36 @@ fileprivate struct Styles {
     }
 }
 
-protocol ExchangeCurrencyVCNavigationDelegate: AnyObject {
+protocol ConvertCurrencyVCNavigationDelegate: AnyObject {
     func closeScreen()
 }
 
-final class ExchangeCurrencyViewController: UIViewController {
-    var navigationDelegate: ExchangeCurrencyVCNavigationDelegate?
-    var viewModel: EchangeCurrencyViewModelInterface?
+final class ConvertCurrencyViewController: UIViewController {
+    var navigationDelegate: ConvertCurrencyVCNavigationDelegate?
+    var viewModel: ConvertCurrencyViewModelInterface?
     
     let defaultSourceCurrency: CurrencyType = .unitedStatesDollar
     let defaultTargetCurrency: CurrencyType = .euro
     
-    private lazy var exchangeAmountView: ExchangeAmountView = {
-        let view = ExchangeAmountView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency)
+    private lazy var convertAmountView: ConvertAmountView = {
+        let view = ConvertAmountView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency)
         return view
     }()
     
-    private lazy var convertedAmountCardView: ConvertedAmountCardView = {
-        let view = ConvertedAmountCardView()
+    private lazy var receivedAmountCardView: ReceivedAmountCardView = {
+        let view = ReceivedAmountCardView()
         view.updateTargetCurrency(defaultTargetCurrency)
         return view
     }()
     
-    private lazy var currencyCardView: CurrencyCardView = {
-        let view = CurrencyCardView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency, defaultTargetCurrency: defaultTargetCurrency)
+    private lazy var convertCurrenciesTypeCardView: ConvertCurrenciesTypeCardView = {
+        let view = ConvertCurrenciesTypeCardView(frame: .zero, defaultSourceCurrency: defaultSourceCurrency, defaultTargetCurrency: defaultTargetCurrency)
         view.showListOfCurrencies = { [weak self] identifier, currency, oppositeCurrency in
             self?.showListOfCurrencies(isSourceCurrency: identifier, currentCurrency: currency, oppositeCurrency: oppositeCurrency)
         }
         view.newTargetCurrency = { [weak self] targetCurrency, sourceCurrency in
-            self?.convertedAmountCardView.updateTargetCurrency(targetCurrency)
-            self?.exchangeAmountView.updateCurrencySymbol(currency: sourceCurrency)
+            self?.receivedAmountCardView.updateTargetCurrency(targetCurrency)
+            self?.convertAmountView.updateCurrencySymbol(currency: sourceCurrency)
             self?.handleUpdateNewCurrencies(source: sourceCurrency, target: targetCurrency)
         }
         return view
@@ -82,16 +82,16 @@ final class ExchangeCurrencyViewController: UIViewController {
     }
     
     deinit {
-        print(#function, "ExchangeCurrencyViewController")
+        print(#function, "ConvertCurrencyViewController")
     }
     
     private func initUI() {
         detailsScreenNavigationHeader(backButtonImage: Styles.Image.backButtonIcon, action: #selector(backButtonAction), title: Styles.Text.screenTitle)
         view.backgroundColor = Styles.Color.backgroundColor
         
-        view.addSubview(exchangeAmountView)
-        view.addSubview(convertedAmountCardView)
-        view.addSubview(currencyCardView)
+        view.addSubview(convertAmountView)
+        view.addSubview(receivedAmountCardView)
+        view.addSubview(convertCurrenciesTypeCardView)
         view.addSubview(inputPanel)
         // TODO: remove later if it wouldn't required by BL
 //        view.addSubview(footerPanel)
@@ -101,27 +101,27 @@ final class ExchangeCurrencyViewController: UIViewController {
         let smallerTopInset: CGFloat = 10 + topSafeArea
         
         // Resizing For Small Screen
-        let topConstraintExchangeView: NSLayoutConstraint = exchangeAmountView.topAnchor.constraint(equalTo: view.topAnchor, constant: smallerTopInset)
-        topConstraintExchangeView.priority = .defaultHigh
-        topConstraintExchangeView.isActive = true
+        let topConstraintConvertAmountView: NSLayoutConstraint = convertAmountView.topAnchor.constraint(equalTo: view.topAnchor, constant: smallerTopInset)
+        topConstraintConvertAmountView.priority = .defaultHigh
+        topConstraintConvertAmountView.isActive = true
         
-        exchangeAmountView.topAnchor.constraint(equalTo: view.topAnchor, constant: viewDefaultTopInset).isActive = true
-        exchangeAmountView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        exchangeAmountView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        convertAmountView.topAnchor.constraint(equalTo: view.topAnchor, constant: viewDefaultTopInset).isActive = true
+        convertAmountView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        convertAmountView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         // Resizing For Small Screen
-        let topConstraintConvertedAmountCardView: NSLayoutConstraint = convertedAmountCardView.topAnchor.constraint(equalTo: exchangeAmountView.bottomAnchor)
-        topConstraintConvertedAmountCardView.priority = .defaultHigh
-        topConstraintConvertedAmountCardView.isActive = true
-        convertedAmountCardView.topAnchor.constraint(lessThanOrEqualTo: exchangeAmountView.bottomAnchor, constant: 25).isActive = true
-        convertedAmountCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        convertedAmountCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        let topConstraintReceivedAmountCardView: NSLayoutConstraint = receivedAmountCardView.topAnchor.constraint(equalTo: convertAmountView.bottomAnchor)
+        topConstraintReceivedAmountCardView.priority = .defaultHigh
+        topConstraintReceivedAmountCardView.isActive = true
+        receivedAmountCardView.topAnchor.constraint(lessThanOrEqualTo: convertAmountView.bottomAnchor, constant: 25).isActive = true
+        receivedAmountCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        receivedAmountCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
-        currencyCardView.topAnchor.constraint(equalTo: convertedAmountCardView.bottomAnchor, constant: 16).isActive = true
-        currencyCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        currencyCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        convertCurrenciesTypeCardView.topAnchor.constraint(equalTo: receivedAmountCardView.bottomAnchor, constant: 16).isActive = true
+        convertCurrenciesTypeCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        convertCurrenciesTypeCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        inputPanel.topAnchor.constraint(equalTo: currencyCardView.bottomAnchor, constant: 11).isActive = true
+        inputPanel.topAnchor.constraint(equalTo: convertCurrenciesTypeCardView.bottomAnchor, constant: 11).isActive = true
         inputPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         inputPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         inputPanel.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor).isActive = true
@@ -138,7 +138,7 @@ final class ExchangeCurrencyViewController: UIViewController {
         viewModel?.observeKeyboardInputChanges = { [weak self] result in
             switch result {
             case .success(let amount):
-                self?.exchangeAmountView.updateCurrencyAmount(amount: amount)
+                self?.convertAmountView.updateCurrencyAmount(amount: amount)
             case .failure(_):
                 break
             }
@@ -147,7 +147,7 @@ final class ExchangeCurrencyViewController: UIViewController {
         viewModel?.observeConvertedData = { [weak self] result in
             switch result {
             case .success(let data):
-                self?.convertedAmountCardView.updateTargetCurrencySum(data)
+                self?.receivedAmountCardView.updateTargetCurrencySum(data)
             case .failure(_):
                 break
             }
@@ -155,20 +155,20 @@ final class ExchangeCurrencyViewController: UIViewController {
     }
     
     private func showListOfCurrencies(isSourceCurrency: Bool, currentCurrency: CurrencyType, oppositeCurrency: CurrencyType) {
-        let currenciesVC = CurrencyListViewController(currentCurrency: currentCurrency, oppositeCurrency: oppositeCurrency)
+        let currenciesVC = CurrenciesListViewController(currentCurrency: currentCurrency, oppositeCurrency: oppositeCurrency)
         currenciesVC.selectedValue = { [weak self] currency in
             guard let self = self else { return }
             if isSourceCurrency {
-                currencyCardView.sourceCurrency.updateCurrency(currency)
-                exchangeAmountView.updateCurrencySymbol(currency: currency)
+                convertCurrenciesTypeCardView.sourceCurrency.updateCurrency(currency)
+                convertAmountView.updateCurrencySymbol(currency: currency)
                 
-                let targetCurrency = currencyCardView.targetCurrency.currentCurrency
+                let targetCurrency = convertCurrenciesTypeCardView.targetCurrency.currentCurrency
                 handleUpdateNewCurrencies(source: currency, target: targetCurrency)
             } else {
-                currencyCardView.targetCurrency.updateCurrency(currency)
-                convertedAmountCardView.updateTargetCurrency(currency)
+                convertCurrenciesTypeCardView.targetCurrency.updateCurrency(currency)
+                receivedAmountCardView.updateTargetCurrency(currency)
                 
-                let sourceCurrency = currencyCardView.sourceCurrency.currentCurrency
+                let sourceCurrency = convertCurrenciesTypeCardView.sourceCurrency.currentCurrency
                 handleUpdateNewCurrencies(source: sourceCurrency, target: currency)
             }
         }

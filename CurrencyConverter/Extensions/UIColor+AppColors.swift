@@ -14,7 +14,7 @@ extension UIColor {
         static let royalBlueColor = UIColor(named: "Royal Blue")
         static let waikawaGreyColor = UIColor(named: "Waikawa Grey")
         static let ghostWhiteColor = UIColor(named: "Ghost White")
-        static let whiteColor = UIColor(named: "White")
+        static let whiteColor = UIColor(named: "App White")
         static let hawkesBlue = UIColor(named: "Hawkes Blue")
     }
 }

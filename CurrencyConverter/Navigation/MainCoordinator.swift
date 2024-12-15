@@ -20,7 +20,7 @@ final class MainFlowCoordinator {
     }
     
     fileprivate func openCurrencyConverterScreen() {
-        let vc = ExchangeCurrencyConfigurator.initializeExchangeCurrencyVC(navigationDelegate: self)
+        let vc = ConvertCurrencyConfigurator.initializeConvertCurrencyVC(navigationDelegate: self)
         navigationController.pushViewController(vc, animated: true)
     }
 }
@@ -33,7 +33,7 @@ extension MainFlowCoordinator: HomeVCNavigationDelegate {
 }
 
 // MARK: - Convert Currency Screen
-extension MainFlowCoordinator: ExchangeCurrencyVCNavigationDelegate {
+extension MainFlowCoordinator: ConvertCurrencyVCNavigationDelegate {
     func closeScreen() {
         navigationController.popViewController(animated: true)
     }

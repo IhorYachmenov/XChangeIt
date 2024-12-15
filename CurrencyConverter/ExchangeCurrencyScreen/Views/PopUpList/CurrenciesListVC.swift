@@ -1,5 +1,5 @@
 //
-//  CurrencyListsVC.swift
+//  CurrenciesListVC.swift
 //  CurrencyConverter
 //
 //  Created by Ice on 14.12.2024.
@@ -25,7 +25,7 @@ fileprivate struct Styles {
     }
 }
 
-fileprivate class CurrencyViewTableViewCell: UITableViewCell {
+fileprivate class CurrenciesListTableViewCell: UITableViewCell {
     static let identifier = "CurrencyViewTableViewCell"
     
     lazy var currencyImage: UIImageView = {
@@ -94,7 +94,7 @@ fileprivate class CurrencyViewTableViewCell: UITableViewCell {
     }
 }
 
-final class CurrencyListViewController: UIViewController {
+final class CurrenciesListViewController: UIViewController {
     var selectedValue: ((_ value: CurrencyType) -> ())?
     
     private var sourceData: [CurrencyType] = [] {
@@ -111,7 +111,7 @@ final class CurrencyListViewController: UIViewController {
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         view.backgroundColor = Styles.Color.backgroundColor
-        view.register(CurrencyViewTableViewCell.self, forCellReuseIdentifier: CurrencyViewTableViewCell.identifier)
+        view.register(CurrenciesListTableViewCell.self, forCellReuseIdentifier: CurrenciesListTableViewCell.identifier)
         return view
     }()
     
@@ -155,13 +155,13 @@ final class CurrencyListViewController: UIViewController {
     }
 }
 
-extension CurrencyListViewController: UITableViewDelegate, UITableViewDataSource {
+extension CurrenciesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sourceData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyViewTableViewCell.identifier, for: indexPath) as! CurrencyViewTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CurrenciesListTableViewCell.identifier, for: indexPath) as! CurrenciesListTableViewCell
         
         let data = sourceData[indexPath.row]
         cell.currencyImage.image = data.image.square

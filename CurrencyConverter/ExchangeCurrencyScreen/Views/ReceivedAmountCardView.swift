@@ -1,5 +1,5 @@
 //
-//  ReceiveView.swift
+//  ReceivedAmountCardView.swift
 //  CurrencyConverter
 //
 //  Created by Ice on 13.12.2024.
@@ -15,12 +15,12 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let viewTitle = "You Convert"
+        static let viewTitle = "You Receive"
         static let convertedTitle = "Quantity"
     }
 }
 
-final class ConvertedAmountCardView: UIView {
+final class ReceivedAmountCardView: UIView {
     private lazy var viewTitle: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false

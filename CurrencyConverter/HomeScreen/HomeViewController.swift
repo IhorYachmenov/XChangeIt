@@ -14,7 +14,7 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let exchangeCurrencyButtonTitle = "Exchange Currency"
+        static let convertCurrencyButtonTitle = "Convert Currency"
     }
 }
 
@@ -30,7 +30,7 @@ final class HomeViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         var configuration = UIButton.Configuration.filled()
-        configuration.title = Styles.Text.exchangeCurrencyButtonTitle
+        configuration.title = Styles.Text.convertCurrencyButtonTitle
         configuration.baseForegroundColor = Styles.Color.whiteColor
         configuration.cornerStyle = .large
         configuration.background.backgroundColor = UIColor.AppColor.waikawaGreyColor
@@ -45,7 +45,7 @@ final class HomeViewController: UIViewController {
         view.configuration = configuration
         
         view.addAction(UIAction(handler: { [weak self] _ in
-            self?.exchangeCurrency()
+            self?.navigationDelegate?.openCurrencyConverveterScreen()
         }), for: .touchUpInside)
         
         return view
@@ -62,10 +62,6 @@ final class HomeViewController: UIViewController {
         
         getStartedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         getStartedButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-    
-    private func exchangeCurrency() {
-        navigationDelegate?.openCurrencyConverveterScreen()
     }
 }
 

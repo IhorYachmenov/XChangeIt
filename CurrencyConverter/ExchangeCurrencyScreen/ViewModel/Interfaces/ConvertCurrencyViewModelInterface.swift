@@ -81,7 +81,7 @@ enum CurrencyType {
     ]
 }
 
-protocol EchangeCurrencyViewModelInterface: AnyObject {
+protocol ConvertCurrencyViewModelInterface: AnyObject {
     var observeKeyboardInputChanges: ((Result<String, Error>) -> ())? { get set }
     // TODO:  String is test solution
     var observeConvertedData: ((Result<String, Error>) -> ())? { get set }

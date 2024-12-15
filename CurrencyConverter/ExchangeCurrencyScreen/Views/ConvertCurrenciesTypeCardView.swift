@@ -1,5 +1,5 @@
 //
-//  ExchangeView.swift
+//  ConvertCurrenciesTypeCardView.swift
 //  CurrencyConverter
 //
 //  Created by Ice on 13.12.2024.
@@ -16,7 +16,7 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let viewTitle = "Exchange"
+        static let viewTitle = "Convert"
     }
     
     struct Image {
@@ -88,7 +88,7 @@ fileprivate final class SwapCurrencyTypesView: UIButton {
     }
 }
 
-final class CurrencyCardView: UIView {
+final class ConvertCurrenciesTypeCardView: UIView {
     let defaultSourceCurrency: CurrencyType
     let defaultTargetCurrency: CurrencyType
     

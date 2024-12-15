@@ -13,11 +13,7 @@ fileprivate struct Styles {
         static let textColor = UIColor.AppColor.midnightExpressColor
         static let commonGrayColor = UIColor.AppColor.waikawaGreyColor
     }
-    
-    struct Text {
-        static let viewTitle = "Exchange"
-    }
-    
+
     struct Image {
         static let deleteButtonIcon = UIImage(named: "KeyboardDeleteIconBlack")
     }

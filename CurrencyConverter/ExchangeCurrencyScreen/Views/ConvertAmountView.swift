@@ -18,7 +18,7 @@ fileprivate struct Styles {
     }
 }
 
-final class ExchangeAmountView: UIView {
+final class ConvertAmountView: UIView {
     private var defaultSourceCurrency: CurrencyType
     private var currencySum: String = "0"
     

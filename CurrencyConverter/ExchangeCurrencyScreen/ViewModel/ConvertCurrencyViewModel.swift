@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
+final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
     // Default Setting
     private let characterLimit: Int = 10
     private let symbolsAfterDot: Int = 2
@@ -38,7 +38,7 @@ final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
     init() {}
     
     deinit {
-        print(#function, "EchangeCurrencyViewModel")
+        print(#function, "ConvertCurrencyViewModel")
     }
     
     func handleKeyboardInput(symbol: KeyboardButtonType) {
@@ -51,7 +51,7 @@ final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
 }
 
 // MARK: Logic of handling keyboard input
-fileprivate extension EchangeCurrencyViewModel {
+fileprivate extension ConvertCurrencyViewModel {
      func allowKeyoardInput(symbol: KeyboardButtonType) -> Bool {
         let checkCharCount = { [weak self]  () -> Bool in
             guard let self = self else { return false }
@@ -92,7 +92,7 @@ fileprivate extension EchangeCurrencyViewModel {
 }
 
 // MARK: Detecting new type of currency value
-fileprivate extension EchangeCurrencyViewModel {
+fileprivate extension ConvertCurrencyViewModel {
     func detectIfInputCurrencyDidChanged(currencyDidUpdated: Bool = false) {
         guard actualCurrencies.source != nil && actualCurrencies.target != nil else { return }
         guard let convertedToDigit = Float(enteredValue) else { return }
@@ -113,7 +113,7 @@ fileprivate extension EchangeCurrencyViewModel {
 }
 
 // MARK: Handling of the new currency value
-fileprivate extension EchangeCurrencyViewModel {
+fileprivate extension ConvertCurrencyViewModel {
     func handleNewCurrency() {
         guard let sourceCurrency = actualCurrencies.source, let targetCurrency = actualCurrencies.target else { return }
         print("Convert \(sourceCurrency.description.code)", enteredValueDigital," to \(targetCurrency.description.code)")
