@@ -8,24 +8,30 @@
 import Foundation
 
 final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
+    // Default Setting
     private let characterLimit: Int = 10
     private let symbolsAfterDot: Int = 2
     
     private var targetCurrency: CurrencyType? {
         didSet {
-            handleNewUserCurrency()
+            detectIfInputCurrencyDidChanged()
         }
     }
     
-    private var enteredValueDigital: Float = 0
+    private var enteredValueDigital: Float = 0 {
+        didSet {
+            handleNewCurrency()
+        }
+    }
     
     private var enteredValue: String = DigitalKeyboardSymbols.zero.string {
         didSet {
             observeInputData?(.success(enteredValue))
-            handleNewUserCurrency()
+            detectIfInputCurrencyDidChanged()
         }
     }
     
+    // MARK: Public API
     var observeInputData: ((Result<String, any Error>) -> ())?
     var observeReceivedData: ((Result<String, any Error>) -> ())?
     
@@ -45,8 +51,8 @@ final class EchangeCurrencyViewModel: EchangeCurrencyViewModelInterface {
 }
 
 // MARK: Logic of handling keyboard input
-extension EchangeCurrencyViewModel {
-    fileprivate func allowKeyoardInput(symbol: KeyboardButtonType) -> Bool {
+fileprivate extension EchangeCurrencyViewModel {
+     func allowKeyoardInput(symbol: KeyboardButtonType) -> Bool {
         let checkCharCount = { [weak self]  () -> Bool in
             guard let self = self else { return false }
             return self.enteredValue.count < characterLimit ? true : false
@@ -62,7 +68,7 @@ extension EchangeCurrencyViewModel {
         }
     }
     
-    fileprivate func parseKeyboardInputToStringCurrency(symbol: KeyboardButtonType) {
+    func parseKeyboardInputToStringCurrency(symbol: KeyboardButtonType) {
         guard allowKeyoardInput(symbol: symbol) else { return }
         switch symbol {
         case .symbol(let symbol):
@@ -86,33 +92,28 @@ extension EchangeCurrencyViewModel {
 }
 
 // MARK: Detecting new type of currency value
-extension EchangeCurrencyViewModel {
-    fileprivate func handleNewUserCurrency() {
+fileprivate extension EchangeCurrencyViewModel {
+    func detectIfInputCurrencyDidChanged() {
         guard let targetCurrency = targetCurrency else { return }
+        guard let convertedToDigit = Float(enteredValue) else { return }
         
-        if let lastCharacter = enteredValue.last, lastCharacter == "." {
-            return
-        } else {
-            let newCurrency: Float = Float(enteredValue) ?? 0
-            if enteredValueDigital != newCurrency {
-                if newCurrency.isZero {
-                    print(#function, targetCurrency.description.sign, newCurrency)
-                    
-                } else {
-                    print(#function, targetCurrency.description.sign, newCurrency)
-                    enteredValueDigital = newCurrency
-                    
-                }
-            }
-            
-            if newCurrency.isZero && !enteredValue.isEmpty {
-                print("Cancel Request")
-            }
+        /// <lastCharIsDot> is the extra check for predicting user changes, may be omitted, but it helps prevent sending converting request faster than it needs if the user only wants to change the value after the dot
+        guard !enteredValue.lastCharIsDot else { return }
+        if enteredValueDigital != convertedToDigit {
+            enteredValueDigital = convertedToDigit
         }
     }
+    
     
     // TODO: - ...
     private func handleReceiveState(data: String) {
         observeReceivedData?(.success(data))
+    }
+}
+
+// MARK: Handling of the new value
+fileprivate extension EchangeCurrencyViewModel {
+    func handleNewCurrency() {
+        print(#function, enteredValueDigital)
     }
 }

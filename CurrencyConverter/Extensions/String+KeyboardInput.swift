@@ -12,7 +12,6 @@ extension String {
         if let dotIndex = self.firstIndex(of: ".") {
             let substringAfterDot = self[self.index(after: dotIndex)...]
             let charactersAfterDot = substringAfterDot.count
-            print("There are \(charactersAfterDot) characters after the dot.")
             return charactersAfterDot
         } else {
             return 0
@@ -25,5 +24,10 @@ extension String {
     
     var firstZero: Bool {
         return self.first == DigitalKeyboardSymbols.zero.rawValue
+    }
+    
+    var lastCharIsDot: Bool {
+        guard let lastCharacter = self.last, lastCharacter == "." else { return false}
+        return true
     }
 }
