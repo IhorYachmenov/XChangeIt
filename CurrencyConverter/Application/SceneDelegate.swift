@@ -9,7 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-
+    private let appContext: AppContext = .init()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -17,9 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         guard let window = window else { return  }
-        
-        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
+                
+        window.rootViewController = appContext.appCoordinator.navigationController
         window.makeKeyAndVisible()
+        appContext.appCoordinator.runFlow()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

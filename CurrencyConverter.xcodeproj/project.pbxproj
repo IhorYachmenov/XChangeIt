@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		58AD52B22D0F249A00986CA6 /* String+KeyboardInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52B12D0F249A00986CA6 /* String+KeyboardInput.swift */; };
 		58AD52B42D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52B32D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift */; };
+		58AD52B72D0F7A9A00986CA6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52B62D0F7A9A00986CA6 /* MainCoordinator.swift */; };
+		58AD52B92D0F7AE400986CA6 /* ExchangeCurrencyConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52B82D0F7AE400986CA6 /* ExchangeCurrencyConfigurator.swift */; };
+		58AD52BB2D0F7C0E00986CA6 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52BA2D0F7C0E00986CA6 /* HomeConfigurator.swift */; };
+		58AD52BE2D0F812500986CA6 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52BD2D0F812500986CA6 /* AppContext.swift */; };
 		58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B12D0C740A000E39B4 /* AppDelegate.swift */; };
 		58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B32D0C740A000E39B4 /* SceneDelegate.swift */; };
 		58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */; };
@@ -45,6 +49,10 @@
 /* Begin PBXFileReference section */
 		58AD52B12D0F249A00986CA6 /* String+KeyboardInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KeyboardInput.swift"; sourceTree = "<group>"; };
 		58AD52B32D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardSymbols.swift; sourceTree = "<group>"; };
+		58AD52B62D0F7A9A00986CA6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		58AD52B82D0F7AE400986CA6 /* ExchangeCurrencyConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCurrencyConfigurator.swift; sourceTree = "<group>"; };
+		58AD52BA2D0F7C0E00986CA6 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		58AD52BD2D0F812500986CA6 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		58E5D1AE2D0C740A000E39B4 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E5D1B12D0C740A000E39B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58E5D1B32D0C740A000E39B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58AD52B52D0F7A7E00986CA6 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				58AD52B62D0F7A9A00986CA6 /* MainCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		58AD52BC2D0F811800986CA6 /* AppContext */ = {
+			isa = PBXGroup;
+			children = (
+				58AD52BD2D0F812500986CA6 /* AppContext.swift */,
+			);
+			path = AppContext;
+			sourceTree = "<group>";
+		};
 		58E5D1A52D0C740A000E39B4 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +134,8 @@
 		58E5D1B02D0C740A000E39B4 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				58AD52BC2D0F811800986CA6 /* AppContext */,
+				58AD52B52D0F7A7E00986CA6 /* Navigation */,
 				58E5D1E82D0CB90C000E39B4 /* HomeScreen */,
 				58E5D1E52D0CB8EA000E39B4 /* ExchangeCurrencyScreen */,
 				58E5D1CB2D0C825A000E39B4 /* Extensions */,
@@ -180,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				58E5D1C72D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift */,
+				58AD52B82D0F7AE400986CA6 /* ExchangeCurrencyConfigurator.swift */,
 				58E5D1EB2D0CBEB7000E39B4 /* Views */,
 				58E5D2102D0E3C49000E39B4 /* ViewModel */,
 				58E5D1FA2D0DCF3A000E39B4 /* Models */,
@@ -191,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */,
+				58AD52BA2D0F7C0E00986CA6 /* HomeConfigurator.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -345,13 +373,16 @@
 				58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */,
 				58E5D1F12D0CC918000E39B4 /* UIView+Shadow.swift in Sources */,
 				58AD52B42D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift in Sources */,
+				58AD52B92D0F7AE400986CA6 /* ExchangeCurrencyConfigurator.swift in Sources */,
 				58AD52B22D0F249A00986CA6 /* String+KeyboardInput.swift in Sources */,
 				58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */,
 				58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */,
 				58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */,
 				58E5D1F32D0CCFEF000E39B4 /* CurrencyCardView.swift in Sources */,
+				58AD52B72D0F7A9A00986CA6 /* MainCoordinator.swift in Sources */,
 				58E5D1ED2D0CBEEB000E39B4 /* ExchangeAmountView.swift in Sources */,
 				58E5D20F2D0E3C44000E39B4 /* EchangeCurrencyViewModel.swift in Sources */,
+				58AD52BE2D0F812500986CA6 /* AppContext.swift in Sources */,
 				58E5D2032D0DF197000E39B4 /* UIView+Animation.swift in Sources */,
 				58E5D1C82D0C7E7F000E39B4 /* ExchangeCurrencyViewController.swift in Sources */,
 				58E5D2062D0E08B4000E39B4 /* InputPannel.swift in Sources */,
@@ -359,6 +390,7 @@
 				58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */,
 				58E5D2152D0E581F000E39B4 /* ServerCurrencyReponseDTO.swift in Sources */,
 				58E5D1CD2D0C826B000E39B4 /* UIColor+AppColors.swift in Sources */,
+				58AD52BB2D0F7C0E00986CA6 /* HomeConfigurator.swift in Sources */,
 				58E5D20B2D0E1712000E39B4 /* ConvertCurrencyView.swift in Sources */,
 				58E5D2132D0E3F55000E39B4 /* EchangeCurrencyViewModelInterface.swift in Sources */,
 			);

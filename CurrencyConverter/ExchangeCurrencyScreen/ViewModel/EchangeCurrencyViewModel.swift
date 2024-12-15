@@ -112,7 +112,7 @@ fileprivate extension EchangeCurrencyViewModel {
     }
 }
 
-// MARK: Handling of the new value
+// MARK: Handling of the new currency value
 fileprivate extension EchangeCurrencyViewModel {
     func handleNewCurrency() {
         guard let sourceCurrency = actualCurrencies.source, let targetCurrency = actualCurrencies.target else { return }

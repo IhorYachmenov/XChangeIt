@@ -23,8 +23,13 @@ fileprivate struct Styles {
     }
 }
 
+protocol ExchangeCurrencyVCNavigationDelegate: AnyObject {
+    func closeScreen()
+}
+
 final class ExchangeCurrencyViewController: UIViewController {
-    let viewModel: EchangeCurrencyViewModelInterface = EchangeCurrencyViewModel()
+    var navigationDelegate: ExchangeCurrencyVCNavigationDelegate?
+    var viewModel: EchangeCurrencyViewModelInterface?
     
     let defaultSourceCurrency: CurrencyType = .unitedStatesDollar
     let defaultTargetCurrency: CurrencyType = .euro
@@ -56,7 +61,7 @@ final class ExchangeCurrencyViewController: UIViewController {
     private lazy var inputPanel: InputPannel = {
         let view = InputPannel()
         view.handleButtonClickAction = { [weak self] symbol in
-            self?.viewModel.handleKeyboardInput(symbol: symbol)
+            self?.viewModel?.handleKeyboardInput(symbol: symbol)
         }
         return view
     }()
@@ -130,7 +135,7 @@ final class ExchangeCurrencyViewController: UIViewController {
     
     private func initBL() {
         handleUpdateNewCurrencies(source: defaultSourceCurrency, target: defaultTargetCurrency)
-        viewModel.observeKeyboardInputChanges = { [weak self] result in
+        viewModel?.observeKeyboardInputChanges = { [weak self] result in
             switch result {
             case .success(let amount):
                 self?.exchangeAmountView.updateCurrencyAmount(amount: amount)
@@ -139,7 +144,7 @@ final class ExchangeCurrencyViewController: UIViewController {
             }
         }
         
-        viewModel.observeConvertedData = { [weak self] result in
+        viewModel?.observeConvertedData = { [weak self] result in
             switch result {
             case .success(let data):
                 self?.convertedAmountCardView.updateTargetCurrencySum(data)
@@ -183,10 +188,10 @@ final class ExchangeCurrencyViewController: UIViewController {
     
     @objc
     private func backButtonAction() {
-        navigationController?.popViewController(animated: true)
+        navigationDelegate?.closeScreen()
     }
     
     private func handleUpdateNewCurrencies(source: CurrencyType, target: CurrencyType) {
-        viewModel.updateCurrenciesTypes(source: source, target: target)
+        viewModel?.updateCurrenciesTypes(source: source, target: target)
     }
 }

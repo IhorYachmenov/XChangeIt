@@ -18,7 +18,13 @@ fileprivate struct Styles {
     }
 }
 
+protocol HomeVCNavigationDelegate: AnyObject {
+    func openCurrencyConverveterScreen()
+}
+
 final class HomeViewController: UIViewController {
+    var navigationDelegate: HomeVCNavigationDelegate?
+    
     private lazy var getStartedButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -59,9 +65,7 @@ final class HomeViewController: UIViewController {
     }
     
     private func exchangeCurrency() {
-        // TODO: -
-        let vc = ExchangeCurrencyViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationDelegate?.openCurrencyConverveterScreen()
     }
 }
 
