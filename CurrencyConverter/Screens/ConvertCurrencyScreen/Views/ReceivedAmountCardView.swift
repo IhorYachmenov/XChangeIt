@@ -22,6 +22,12 @@ fileprivate struct Styles {
 }
 
 final class ReceivedAmountCardView: UIView {
+    private lazy var loader: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .medium)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var viewTitle: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -97,6 +103,7 @@ final class ReceivedAmountCardView: UIView {
         cardView.addSubview(currencyType)
         cardView.addSubview(convertedAmountView)
         cardView.addSubview(convertedAmountTitle)
+        cardView.addSubview(loader)
         
         viewTitle.topAnchor.constraint(equalTo: topAnchor).isActive = true
         viewTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
@@ -129,16 +136,23 @@ final class ReceivedAmountCardView: UIView {
         convertedAmountView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -17).isActive = true
         convertedAmountView.trailingAnchor.constraint(equalTo: cardDivider.leadingAnchor, constant: 0).isActive = true
         convertedAmountView.heightAnchor.constraint(equalToConstant: 17).isActive = true
+        
+        loader.centerXAnchor.constraint(equalTo: cardDivider.centerXAnchor).isActive = true
+        loader.centerYAnchor.constraint(equalTo: cardDivider.centerYAnchor).isActive = true
     }
     
-    private func updateReceivedAmountViewText(text: String, errorState: Bool = false) {
+    private func updateReceivedAmountViewText(text: String, errorState: Bool = false, loadingState: Bool = false) {
         convertedAmountView.fadeTransition()
         convertedAmountView.text = text
         convertedAmountView.textColor = errorState ? Styles.Color.errorColor : Styles.Color.textColor
+        if loadingState {
+            loader.startAnimating()
+        } else {
+            loader.stopAnimating()
+        }
     }
     
     //MARK: -  PUBLIC API
-    
     /// Local actions code
     func updateTargetCurrency(_ currency: CurrencyType) {
         currencyType.fadeTransition()
@@ -155,8 +169,7 @@ final class ReceivedAmountCardView: UIView {
     }
     
     func showLoadingTargetCurrencyState() {
-        // TODO: - update later with loader
-        updateReceivedAmountViewText(text: "Loading...")
+        updateReceivedAmountViewText(text: "", loadingState: true)
     }
     
     func showErrorTargetCurrencyState(_ error: String) {
