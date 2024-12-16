@@ -8,6 +8,8 @@
 import Foundation
 
 final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
+    private var convertCurrencyTask: Task<(), Never>?
+    
     // Default Setting
     private let characterLimit: Int = 10
     private let symbolsAfterDot: Int = 2
@@ -35,6 +37,7 @@ final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
     
     private var dataState: ConvertCurrencyVMDataState = .defaultState {
         didSet {
+            print(#function, dataState)
             observeDataState?(dataState)
         }
     }
@@ -124,7 +127,40 @@ fileprivate extension ConvertCurrencyViewModel {
 // MARK: Handling of the new currency value
 fileprivate extension ConvertCurrencyViewModel {
     func handleNewCurrency() {
-        guard let sourceCurrency = actualCurrencies.source, let targetCurrency = actualCurrencies.target else { return }
-        print("Convert \(sourceCurrency.description.code)", enteredValueDigital," to \(targetCurrency.description.code)")
+        guard let sourceCurrency = actualCurrencies.source?.description.code,
+              let targetCurrency = actualCurrencies.target?.description.code else { return }
+        
+        if enteredValueDigital.isZero {
+            cancelTask()
+            dataState = .defaultState
+        } else {
+            dataState = .loadingState
+            cancelTask()
+            runCurrencyConvertingTask(amount: String(enteredValueDigital),
+                                      sourceCurrency: sourceCurrency, 
+                                      targetCurrency: targetCurrency)
+            
+        }
+    }
+    
+    private func runCurrencyConvertingTask(amount: String, sourceCurrency: String, targetCurrency: String) {
+        convertCurrencyTask = Task { @MainActor in
+            do {
+                let result = try await service.convertCurrency(amount: amount,
+                                                               sourceCurrency: sourceCurrency,
+                                                               targetCurrency: targetCurrency)
+                print(result)
+                guard !Task.isCancelled else { return }
+                dataState = .successState(amount: result.amount)
+            } catch {
+                guard !Task.isCancelled else { return }
+                dataState = .failureState(error: error.localizedDescription)
+            }
+        }
+    }
+    
+    private func cancelTask() {
+        convertCurrencyTask?.cancel()
+        convertCurrencyTask = nil
     }
 }

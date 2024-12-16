@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ConvertCurrencyServiceInterface: AnyObject {
-    func convertCurrency(amount: String, currencyIdentifier: String) async throws -> ConvertCurrencyResponse
+    func convertCurrency(amount: String, sourceCurrency: String, targetCurrency: String) async throws -> ConvertCurrencyResponse
 }
