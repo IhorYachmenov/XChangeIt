@@ -7,6 +7,22 @@
 
 import Foundation
 
+extension URL {
+    /// Returns a new URL by adding the query items, or nil if the URL doesn't support it.
+    /// URL must conform to RFC 3986.
+    func appending(_ queryItems: [URLQueryItem]) -> URL? {
+        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
+            // URL is not conforming to RFC 3986 (maybe it is only conforming to RFC 1808, RFC 1738, and RFC 2732)
+            return nil
+        }
+        // append the query items to the existing ones
+        urlComponents.queryItems = (urlComponents.queryItems ?? []) + queryItems
+
+        // return the url from new url components
+        return urlComponents.url
+    }
+}
+
 final class HTTPRequestBuilder {
     private let multipartBoundary: String = UUID().uuidString
     
@@ -26,7 +42,14 @@ final class HTTPRequestBuilder {
         var fullURL = url.appendingPathComponent(api.path)
         
         if let params = api.params {
-            fullURL.append(queryItems: params.value.parameters)
+            if #available(iOS 16.0, *) {
+                fullURL.append(queryItems: params.value.parameters)
+            } else {
+                guard var urlComps = URLComponents(string: fullURL.absoluteString) else { return fullURL }
+                urlComps.queryItems = params.value.parameters
+                guard var url = URLComponents(string: fullURL.absoluteString)?.url else { return fullURL }
+                fullURL = url
+            }
         }
         
         return fullURL
