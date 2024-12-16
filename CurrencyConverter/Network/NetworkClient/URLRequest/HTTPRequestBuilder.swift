@@ -47,7 +47,7 @@ final class HTTPRequestBuilder {
             } else {
                 guard var urlComps = URLComponents(string: fullURL.absoluteString) else { return fullURL }
                 urlComps.queryItems = params.value.parameters
-                guard var url = URLComponents(string: fullURL.absoluteString)?.url else { return fullURL }
+                guard let url = URLComponents(string: fullURL.absoluteString)?.url else { return fullURL }
                 fullURL = url
             }
         }
