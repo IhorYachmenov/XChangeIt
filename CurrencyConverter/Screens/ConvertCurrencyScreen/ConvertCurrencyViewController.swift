@@ -155,6 +155,7 @@ final class ConvertCurrencyViewController: UIViewController {
         
         if let sheet = navigationVC.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
+            sheet.preferredCornerRadius = 24
             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             sheet.prefersGrabberVisible = true
             sheet.prefersEdgeAttachedInCompactHeight = true
