@@ -20,7 +20,7 @@ final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
         }
     }
     
-    private var enteredValueDigital: Float = 0 {
+    private var enteredValueDigital: Double = 0 {
         didSet {
             handleNewCurrency()
         }
@@ -37,7 +37,6 @@ final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
     
     private var dataState: ConvertCurrencyVMDataState = .defaultState {
         didSet {
-            print(#function, dataState)
             observeDataState?(dataState)
         }
     }
@@ -107,7 +106,7 @@ fileprivate extension ConvertCurrencyViewModel {
 fileprivate extension ConvertCurrencyViewModel {
     func detectIfInputCurrencyDidChanged(currencyDidUpdated: Bool = false) {
         guard actualCurrencies.source != nil && actualCurrencies.target != nil else { return }
-        guard let convertedToDigit = Float(enteredValue) else { return }
+        guard let convertedToDigit = Double(enteredValue) else { return }
         
         let updateValue = { [weak self ] () -> () in
             self?.enteredValueDigital = convertedToDigit
@@ -149,7 +148,6 @@ fileprivate extension ConvertCurrencyViewModel {
                 let result = try await service.convertCurrency(amount: amount,
                                                                sourceCurrency: sourceCurrency,
                                                                targetCurrency: targetCurrency)
-                print(result)
                 guard !Task.isCancelled else { return }
                 dataState = .successState(amount: result.amount)
             } catch {

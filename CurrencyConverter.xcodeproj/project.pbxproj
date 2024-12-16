@@ -17,7 +17,22 @@
 		58AD52C92D0F8DE800986CA6 /* ConvertCurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52C82D0F8DE800986CA6 /* ConvertCurrencyService.swift */; };
 		58AD52CC2D0F8E5A00986CA6 /* ConvertCurrencyServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52CB2D0F8E5A00986CA6 /* ConvertCurrencyServiceInterface.swift */; };
 		58AD52CE2D0F910D00986CA6 /* ConvertCurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52CD2D0F910D00986CA6 /* ConvertCurrencyResponse.swift */; };
-		58AD52D02D0F932D00986CA6 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52CF2D0F932D00986CA6 /* NetworkEngine.swift */; };
+		58AD52D02D0F932D00986CA6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52CF2D0F932D00986CA6 /* HTTPClient.swift */; };
+		58AD52D32D0FACE200986CA6 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52D22D0FACE200986CA6 /* HTTPStatusCode.swift */; };
+		58AD52D52D0FACED00986CA6 /* HTTPResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52D42D0FACED00986CA6 /* HTTPResponseHandler.swift */; };
+		58AD52D82D0FAD2D00986CA6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52D72D0FAD2D00986CA6 /* HTTPMethod.swift */; };
+		58AD52DA2D0FAD3500986CA6 /* RequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52D92D0FAD3500986CA6 /* RequestParams.swift */; };
+		58AD52DC2D0FAD3F00986CA6 /* RequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52DB2D0FAD3F00986CA6 /* RequestBody.swift */; };
+		58AD52DE2D0FAD4700986CA6 /* RequestHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52DD2D0FAD4700986CA6 /* RequestHeaders.swift */; };
+		58AD52E02D0FAD5100986CA6 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52DF2D0FAD5100986CA6 /* HTTPRequestBuilder.swift */; };
+		58AD52E22D0FAD5B00986CA6 /* HTTPRequestMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52E12D0FAD5B00986CA6 /* HTTPRequestMaker.swift */; };
+		58AD52E52D0FAE0F00986CA6 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52E42D0FAE0F00986CA6 /* NetworkingError.swift */; };
+		58AD52E72D0FAE4F00986CA6 /* Dictionary+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52E62D0FAE4F00986CA6 /* Dictionary+JSON.swift */; };
+		58AD52E92D0FAE6900986CA6 /* Bundle+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52E82D0FAE6900986CA6 /* Bundle+Networking.swift */; };
+		58AD52EB2D0FAE8D00986CA6 /* HTTPClientAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52EA2D0FAE8D00986CA6 /* HTTPClientAPI.swift */; };
+		58AD52ED2D0FAE9E00986CA6 /* DefaultErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52EC2D0FAE9E00986CA6 /* DefaultErrorModel.swift */; };
+		58AD52EF2D0FAEBB00986CA6 /* APIRequestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52EE2D0FAEBB00986CA6 /* APIRequestConfigurator.swift */; };
+		58AD52F12D0FAEE400986CA6 /* HTTPClientConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AD52F02D0FAEE400986CA6 /* HTTPClientConfigurator.swift */; };
 		58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B12D0C740A000E39B4 /* AppDelegate.swift */; };
 		58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B32D0C740A000E39B4 /* SceneDelegate.swift */; };
 		58E5D1B62D0C740A000E39B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D1B52D0C740A000E39B4 /* HomeViewController.swift */; };
@@ -62,7 +77,22 @@
 		58AD52C82D0F8DE800986CA6 /* ConvertCurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyService.swift; sourceTree = "<group>"; };
 		58AD52CB2D0F8E5A00986CA6 /* ConvertCurrencyServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyServiceInterface.swift; sourceTree = "<group>"; };
 		58AD52CD2D0F910D00986CA6 /* ConvertCurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyResponse.swift; sourceTree = "<group>"; };
-		58AD52CF2D0F932D00986CA6 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		58AD52CF2D0F932D00986CA6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		58AD52D22D0FACE200986CA6 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		58AD52D42D0FACED00986CA6 /* HTTPResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseHandler.swift; sourceTree = "<group>"; };
+		58AD52D72D0FAD2D00986CA6 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		58AD52D92D0FAD3500986CA6 /* RequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParams.swift; sourceTree = "<group>"; };
+		58AD52DB2D0FAD3F00986CA6 /* RequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBody.swift; sourceTree = "<group>"; };
+		58AD52DD2D0FAD4700986CA6 /* RequestHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHeaders.swift; sourceTree = "<group>"; };
+		58AD52DF2D0FAD5100986CA6 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
+		58AD52E12D0FAD5B00986CA6 /* HTTPRequestMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMaker.swift; sourceTree = "<group>"; };
+		58AD52E42D0FAE0F00986CA6 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		58AD52E62D0FAE4F00986CA6 /* Dictionary+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+JSON.swift"; sourceTree = "<group>"; };
+		58AD52E82D0FAE6900986CA6 /* Bundle+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Networking.swift"; sourceTree = "<group>"; };
+		58AD52EA2D0FAE8D00986CA6 /* HTTPClientAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientAPI.swift; sourceTree = "<group>"; };
+		58AD52EC2D0FAE9E00986CA6 /* DefaultErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultErrorModel.swift; sourceTree = "<group>"; };
+		58AD52EE2D0FAEBB00986CA6 /* APIRequestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestConfigurator.swift; sourceTree = "<group>"; };
+		58AD52F02D0FAEE400986CA6 /* HTTPClientConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientConfigurator.swift; sourceTree = "<group>"; };
 		58E5D1AE2D0C740A000E39B4 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E5D1B12D0C740A000E39B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58E5D1B32D0C740A000E39B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +176,14 @@
 		58AD52C12D0F8CD000986CA6 /* NetworkClient */ = {
 			isa = PBXGroup;
 			children = (
-				58AD52CF2D0F932D00986CA6 /* NetworkEngine.swift */,
+				58AD52CF2D0F932D00986CA6 /* HTTPClient.swift */,
+				58AD52EA2D0FAE8D00986CA6 /* HTTPClientAPI.swift */,
+				58AD52EC2D0FAE9E00986CA6 /* DefaultErrorModel.swift */,
+				58AD52EE2D0FAEBB00986CA6 /* APIRequestConfigurator.swift */,
+				58AD52F02D0FAEE400986CA6 /* HTTPClientConfigurator.swift */,
+				58AD52D12D0FACD100986CA6 /* URLResponse */,
+				58AD52D62D0FAD1B00986CA6 /* URLRequest */,
+				58AD52E32D0FAE0300986CA6 /* Errors */,
 			);
 			path = NetworkClient;
 			sourceTree = "<group>";
@@ -189,6 +226,36 @@
 				58AD52CB2D0F8E5A00986CA6 /* ConvertCurrencyServiceInterface.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		58AD52D12D0FACD100986CA6 /* URLResponse */ = {
+			isa = PBXGroup;
+			children = (
+				58AD52D22D0FACE200986CA6 /* HTTPStatusCode.swift */,
+				58AD52D42D0FACED00986CA6 /* HTTPResponseHandler.swift */,
+			);
+			path = URLResponse;
+			sourceTree = "<group>";
+		};
+		58AD52D62D0FAD1B00986CA6 /* URLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				58AD52D72D0FAD2D00986CA6 /* HTTPMethod.swift */,
+				58AD52D92D0FAD3500986CA6 /* RequestParams.swift */,
+				58AD52DB2D0FAD3F00986CA6 /* RequestBody.swift */,
+				58AD52DD2D0FAD4700986CA6 /* RequestHeaders.swift */,
+				58AD52DF2D0FAD5100986CA6 /* HTTPRequestBuilder.swift */,
+				58AD52E12D0FAD5B00986CA6 /* HTTPRequestMaker.swift */,
+			);
+			path = URLRequest;
+			sourceTree = "<group>";
+		};
+		58AD52E32D0FAE0300986CA6 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				58AD52E42D0FAE0F00986CA6 /* NetworkingError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		58E5D1A52D0C740A000E39B4 = {
@@ -253,6 +320,8 @@
 				58E5D2002D0DF11F000E39B4 /* UIImageView+Animation.swift */,
 				58E5D2022D0DF197000E39B4 /* UIView+Animation.swift */,
 				58AD52B12D0F249A00986CA6 /* String+KeyboardInput.swift */,
+				58AD52E62D0FAE4F00986CA6 /* Dictionary+JSON.swift */,
+				58AD52E82D0FAE6900986CA6 /* Bundle+Networking.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,21 +519,30 @@
 				58E5D1EF2D0CC613000E39B4 /* ReceivedAmountCardView.swift in Sources */,
 				58E5D1FF2D0DD8A5000E39B4 /* CurrenciesListVC.swift in Sources */,
 				58AD52C92D0F8DE800986CA6 /* ConvertCurrencyService.swift in Sources */,
+				58AD52E72D0FAE4F00986CA6 /* Dictionary+JSON.swift in Sources */,
 				58E5D2082D0E0D16000E39B4 /* KeyboardButton.swift in Sources */,
 				58AD52C72D0F8DA100986CA6 /* ConvertCurrencyAPI.swift in Sources */,
+				58AD52F12D0FAEE400986CA6 /* HTTPClientConfigurator.swift in Sources */,
 				58E5D1F72D0CEA88000E39B4 /* CurrencyTypeView.swift in Sources */,
 				58E5D1F12D0CC918000E39B4 /* UIView+Shadow.swift in Sources */,
+				58AD52E52D0FAE0F00986CA6 /* NetworkingError.swift in Sources */,
+				58AD52D52D0FACED00986CA6 /* HTTPResponseHandler.swift in Sources */,
 				58AD52B42D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift in Sources */,
-				58AD52D02D0F932D00986CA6 /* NetworkEngine.swift in Sources */,
+				58AD52D02D0F932D00986CA6 /* HTTPClient.swift in Sources */,
+				58AD52DE2D0FAD4700986CA6 /* RequestHeaders.swift in Sources */,
 				58AD52B92D0F7AE400986CA6 /* ConvertCurrencyConfigurator.swift in Sources */,
 				58AD52B22D0F249A00986CA6 /* String+KeyboardInput.swift in Sources */,
 				58E5D1DE2D0C8C43000E39B4 /* UIFont+AppFont.swift in Sources */,
 				58E5D1B22D0C740A000E39B4 /* AppDelegate.swift in Sources */,
+				58AD52EB2D0FAE8D00986CA6 /* HTTPClientAPI.swift in Sources */,
+				58AD52DC2D0FAD3F00986CA6 /* RequestBody.swift in Sources */,
 				58E5D1F52D0CD02B000E39B4 /* UIApplication+Inset.swift in Sources */,
 				58E5D1F32D0CCFEF000E39B4 /* ConvertCurrenciesTypeCardView.swift in Sources */,
+				58AD52D32D0FACE200986CA6 /* HTTPStatusCode.swift in Sources */,
 				58AD52B72D0F7A9A00986CA6 /* MainCoordinator.swift in Sources */,
 				58E5D1ED2D0CBEEB000E39B4 /* ConvertAmountView.swift in Sources */,
 				58AD52CE2D0F910D00986CA6 /* ConvertCurrencyResponse.swift in Sources */,
+				58AD52E92D0FAE6900986CA6 /* Bundle+Networking.swift in Sources */,
 				58E5D20F2D0E3C44000E39B4 /* ConvertCurrencyViewModel.swift in Sources */,
 				58AD52BE2D0F812500986CA6 /* AppContext.swift in Sources */,
 				58E5D2032D0DF197000E39B4 /* UIView+Animation.swift in Sources */,
@@ -474,6 +552,12 @@
 				58E5D1B42D0C740A000E39B4 /* SceneDelegate.swift in Sources */,
 				58E5D2152D0E581F000E39B4 /* ConvertCurrencyResponseDTO.swift in Sources */,
 				58E5D1CD2D0C826B000E39B4 /* UIColor+AppColors.swift in Sources */,
+				58AD52ED2D0FAE9E00986CA6 /* DefaultErrorModel.swift in Sources */,
+				58AD52E22D0FAD5B00986CA6 /* HTTPRequestMaker.swift in Sources */,
+				58AD52DA2D0FAD3500986CA6 /* RequestParams.swift in Sources */,
+				58AD52EF2D0FAEBB00986CA6 /* APIRequestConfigurator.swift in Sources */,
+				58AD52E02D0FAD5100986CA6 /* HTTPRequestBuilder.swift in Sources */,
+				58AD52D82D0FAD2D00986CA6 /* HTTPMethod.swift in Sources */,
 				58AD52BB2D0F7C0E00986CA6 /* HomeConfigurator.swift in Sources */,
 				58E5D20B2D0E1712000E39B4 /* ConvertCurrencyView.swift in Sources */,
 				58E5D2132D0E3F55000E39B4 /* ConvertCurrencyViewModelInterface.swift in Sources */,

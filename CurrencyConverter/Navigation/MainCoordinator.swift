@@ -9,9 +9,11 @@ import UIKit
 
 final class MainFlowCoordinator {
     let navigationController: UINavigationController
+    let httpClient: HTTPClientAPI
     
-    init() {
+    init(httpClient: HTTPClientAPI) {
         self.navigationController = UINavigationController()
+        self.httpClient = httpClient
     }
     
     func runFlow() {
@@ -20,7 +22,7 @@ final class MainFlowCoordinator {
     }
     
     fileprivate func openCurrencyConverterScreen() {
-        let vc = ConvertCurrencyConfigurator.initializeConvertCurrencyVC(navigationDelegate: self)
+        let vc = ConvertCurrencyConfigurator.initializeConvertCurrencyVC(navigationDelegate: self, httpClient: httpClient)
         navigationController.pushViewController(vc, animated: true)
     }
 }

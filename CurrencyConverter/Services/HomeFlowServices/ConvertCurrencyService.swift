@@ -8,14 +8,28 @@
 import Foundation
 
 final class ConvertCurrencyService: ConvertCurrencyServiceInterface {
+    let httpClient: HTTPClientAPI
     
+    let api: (ConvertCurrencyAPI) -> ConvertCurrencyAPITarget
+    
+    init(httpClient: HTTPClientAPI) {
+        self.httpClient = httpClient
+        self.api = apiCreator()
+    }
     deinit {
         print(#function, "ConvertCurrencyService")
     }
-    // TODO: Add network engine
+    
     func convertCurrency(amount: String, sourceCurrency: String, targetCurrency: String) async throws -> ConvertCurrencyResponse {
-        print(#function)
-        try await Task.sleep(nanoseconds: 7 * 1_000_000_000)
-        return ConvertCurrencyResponse(amount: "123123")
+        let convertCorrencyApi = api(.convertCurrency(amount: amount, source: sourceCurrency, target: targetCurrency))
+        let request: ConvertCurrencyResponseDTO = try await httpClient.performRequest(api: convertCorrencyApi)
+        
+        return convertCurrencyDataModelFromDTO(request)
+    }
+}
+
+fileprivate func apiCreator() -> (_ api: ConvertCurrencyAPI) -> ConvertCurrencyAPITarget {
+    return { api in
+        return ConvertCurrencyAPITarget(api: api)
     }
 }

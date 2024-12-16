@@ -8,8 +8,8 @@
 import Foundation
 
 final class ConvertCurrencyConfigurator {
-    class func initializeConvertCurrencyVC(navigationDelegate: ConvertCurrencyVCNavigationDelegate) -> ConvertCurrencyViewController {
-        let service = ConvertCurrencyService()
+    class func initializeConvertCurrencyVC(navigationDelegate: ConvertCurrencyVCNavigationDelegate, httpClient: HTTPClientAPI) -> ConvertCurrencyViewController {
+        let service = ConvertCurrencyService(httpClient: httpClient)
         let viewModel = ConvertCurrencyViewModel(service: service)
         let vc = ConvertCurrencyViewController()
         vc.navigationDelegate = navigationDelegate

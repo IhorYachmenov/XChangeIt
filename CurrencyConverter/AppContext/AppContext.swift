@@ -7,10 +7,15 @@
 
 import UIKit
 
+struct AppEnvironment {
+    static let baseURL: String = "http://api.evp.lt"
+}
+
 final class AppContext: NSObject {
     let appCoordinator: MainFlowCoordinator
     
     override init() {
-        self.appCoordinator = MainFlowCoordinator()
+        HTTPClient.network.initConfigurations(HTTPClientConfigurator(baseURL: AppEnvironment.baseURL))
+        self.appCoordinator = MainFlowCoordinator(httpClient: HTTPClient.network)
     }
 }
