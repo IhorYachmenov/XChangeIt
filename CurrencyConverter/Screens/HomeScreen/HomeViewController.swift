@@ -14,7 +14,7 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let convertCurrencyButtonTitle = "Convert Currency"
+        static let convertCurrencyButtonTitle = "Currency Conversion"
     }
 }
 

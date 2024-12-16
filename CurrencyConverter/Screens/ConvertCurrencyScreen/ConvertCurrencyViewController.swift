@@ -19,7 +19,7 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let screenTitle = "Exchange Currency"
+        static let screenTitle = "Currency Conversion"
     }
 }
 
