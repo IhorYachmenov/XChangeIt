@@ -19,7 +19,12 @@ final class HTTPRequestMaker {
             guard let request = HTTPRequestBuilder(api: api).prepareRequest() else {
                 throw NetworkingError.requestFailed(innerError: URLError(.badURL))
             }
-            print("!!!request", request)
+            
+            #if DEBUG
+            print("!!!Request", request)
+            #else
+            #endif
+            
             let (data, response) = try await urlSession.data(for: request)
             
             guard let _ = (response as? HTTPURLResponse)?.statusCode else {
