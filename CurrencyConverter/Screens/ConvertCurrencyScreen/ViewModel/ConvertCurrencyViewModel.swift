@@ -153,6 +153,7 @@ fileprivate extension ConvertCurrencyViewModel {
                 guard !Task.isCancelled else { return }
                 let errorDescription = (error as? NetworkingError)?.description ?? error.localizedDescription
                 dataState = .failureState(error: errorDescription)
+                enableAutoUpdate()
             }
         }
     }
