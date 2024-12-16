@@ -9,6 +9,8 @@ import Foundation
 
 final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
     private var convertCurrencyTask: Task<(), Never>?
+    private var timer: Timer?
+    private let autoUpdateTime: TimeInterval = 10
     
     // Default Setting
     private let characterLimit: Int = 10
@@ -150,6 +152,7 @@ fileprivate extension ConvertCurrencyViewModel {
                                                                targetCurrency: targetCurrency)
                 guard !Task.isCancelled else { return }
                 dataState = .successState(amount: result.amount)
+                enableAutoUpdate()
             } catch {
                 guard !Task.isCancelled else { return }
                 dataState = .failureState(error: error.localizedDescription)
@@ -160,5 +163,17 @@ fileprivate extension ConvertCurrencyViewModel {
     private func cancelTask() {
         convertCurrencyTask?.cancel()
         convertCurrencyTask = nil
+        disableAutoUpdate()
+    }
+    
+    private func enableAutoUpdate() {
+        timer = Timer.scheduledTimer(withTimeInterval: autoUpdateTime, repeats: true) { [weak self] timer in
+            self?.handleNewCurrency()
+        }
+    }
+    
+    private func disableAutoUpdate() {
+        timer?.invalidate()
+        timer = nil
     }
 }
