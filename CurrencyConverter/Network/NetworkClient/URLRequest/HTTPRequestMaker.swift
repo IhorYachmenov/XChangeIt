@@ -22,7 +22,7 @@ final class HTTPRequestMaker {
             print("!!!request", request)
             let (data, response) = try await urlSession.data(for: request)
             
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+            guard let _ = (response as? HTTPURLResponse)?.statusCode else {
                 throw NetworkingError.invalidStatusCode(statusCode: -1)
             }
             

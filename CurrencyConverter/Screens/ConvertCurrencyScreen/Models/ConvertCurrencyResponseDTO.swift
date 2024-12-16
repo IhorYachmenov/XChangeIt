@@ -11,7 +11,6 @@ struct ConvertCurrencyResponseDTO: Decodable {
     let amount: String?
 }
 
-
 func convertCurrencyDataModelFromDTO(_ dto: ConvertCurrencyResponseDTO) -> ConvertCurrencyResponse {
     return ConvertCurrencyResponse(amount: dto.amount ?? "")
 }
