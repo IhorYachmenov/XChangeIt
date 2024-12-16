@@ -16,9 +16,6 @@ final class ConvertCurrencyService: ConvertCurrencyServiceInterface {
         self.httpClient = httpClient
         self.api = apiCreator()
     }
-    deinit {
-        print(#function, "ConvertCurrencyService")
-    }
     
     func convertCurrency(amount: String, sourceCurrency: String, targetCurrency: String) async throws -> ConvertCurrencyResponse {
         let convertCorrencyApi = api(.convertCurrency(amount: amount, source: sourceCurrency, target: targetCurrency))

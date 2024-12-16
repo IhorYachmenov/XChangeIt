@@ -81,10 +81,6 @@ final class ConvertCurrencyViewController: UIViewController {
         initBL()
     }
     
-    deinit {
-        print(#function, "ConvertCurrencyViewController")
-    }
-    
     private func initUI() {
         detailsScreenNavigationHeader(backButtonImage: Styles.Image.backButtonIcon, action: #selector(backButtonAction), title: Styles.Text.screenTitle)
         view.backgroundColor = Styles.Color.backgroundColor

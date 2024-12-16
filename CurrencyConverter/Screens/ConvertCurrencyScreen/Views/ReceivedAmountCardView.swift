@@ -134,7 +134,7 @@ final class ReceivedAmountCardView: UIView {
         convertedAmountView.topAnchor.constraint(equalTo: convertedAmountTitle.bottomAnchor, constant: 0).isActive = true
         convertedAmountView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 14).isActive = true
         convertedAmountView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -17).isActive = true
-        convertedAmountView.trailingAnchor.constraint(equalTo: cardDivider.leadingAnchor, constant: 0).isActive = true
+        convertedAmountView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -75).isActive = true
         convertedAmountView.heightAnchor.constraint(equalToConstant: 17).isActive = true
         
         loader.centerXAnchor.constraint(equalTo: cardDivider.centerXAnchor).isActive = true

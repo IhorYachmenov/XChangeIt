@@ -50,10 +50,6 @@ final class ConvertCurrencyViewModel: ConvertCurrencyViewModelInterface {
         self.service = service
     }
     
-    deinit {
-        print(#function, "ConvertCurrencyViewModel")
-    }
-    
     func handleKeyboardInput(symbol: KeyboardButtonType) {
         parseKeyboardInputToStringCurrency(symbol: symbol)
     }
@@ -155,7 +151,8 @@ fileprivate extension ConvertCurrencyViewModel {
                 enableAutoUpdate()
             } catch {
                 guard !Task.isCancelled else { return }
-                dataState = .failureState(error: error.localizedDescription)
+                let errorDescription = (error as? NetworkingError)?.description ?? error.localizedDescription
+                dataState = .failureState(error: errorDescription)
             }
         }
     }
