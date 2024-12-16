@@ -66,15 +66,6 @@ final class ConvertCurrencyViewController: UIViewController {
         return view
     }()
     
-    // TODO: remove later if it wouldn't required by BL
-//    private lazy var footerPanel: ConvertCurrencyView = {
-//        let view = ConvertCurrencyView()
-//        view.handleButtonClickAction = { [weak self] in
-//            
-//        }
-//        return view
-//    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -89,8 +80,6 @@ final class ConvertCurrencyViewController: UIViewController {
         view.addSubview(receivedAmountCardView)
         view.addSubview(convertCurrenciesTypeCardView)
         view.addSubview(inputPanel)
-        // TODO: remove later if it wouldn't required by BL
-//        view.addSubview(footerPanel)
         
         let topSafeArea: CGFloat = UIApplication.windowInset.top + (navigationController?.view.safeAreaInsets.top ?? 0)
         let viewDefaultTopInset: CGFloat = 25 + topSafeArea
@@ -121,12 +110,6 @@ final class ConvertCurrencyViewController: UIViewController {
         inputPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         inputPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         inputPanel.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor).isActive = true
-        
-        // TODO: remove later if it wouldn't required by BL
-//        footerPanel.topAnchor.constraint(greaterThanOrEqualTo: inputPanel.bottomAnchor).isActive = true
-//        footerPanel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        footerPanel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        footerPanel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     private func initBL() {

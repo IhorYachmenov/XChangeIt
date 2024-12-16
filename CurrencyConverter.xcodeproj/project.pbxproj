@@ -60,7 +60,6 @@
 		58E5D2032D0DF197000E39B4 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D2022D0DF197000E39B4 /* UIView+Animation.swift */; };
 		58E5D2062D0E08B4000E39B4 /* InputPannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D2052D0E08B4000E39B4 /* InputPannel.swift */; };
 		58E5D2082D0E0D16000E39B4 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D2072D0E0D16000E39B4 /* KeyboardButton.swift */; };
-		58E5D20B2D0E1712000E39B4 /* ConvertCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D20A2D0E1712000E39B4 /* ConvertCurrencyView.swift */; };
 		58E5D20F2D0E3C44000E39B4 /* ConvertCurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D20E2D0E3C44000E39B4 /* ConvertCurrencyViewModel.swift */; };
 		58E5D2132D0E3F55000E39B4 /* ConvertCurrencyViewModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D2122D0E3F55000E39B4 /* ConvertCurrencyViewModelInterface.swift */; };
 		58E5D2152D0E581F000E39B4 /* ConvertCurrencyResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5D2142D0E581F000E39B4 /* ConvertCurrencyResponseDTO.swift */; };
@@ -122,7 +121,6 @@
 		58E5D2022D0DF197000E39B4 /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		58E5D2052D0E08B4000E39B4 /* InputPannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPannel.swift; sourceTree = "<group>"; };
 		58E5D2072D0E0D16000E39B4 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
-		58E5D20A2D0E1712000E39B4 /* ConvertCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyView.swift; sourceTree = "<group>"; };
 		58E5D20E2D0E3C44000E39B4 /* ConvertCurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyViewModel.swift; sourceTree = "<group>"; };
 		58E5D2122D0E3F55000E39B4 /* ConvertCurrencyViewModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyViewModelInterface.swift; sourceTree = "<group>"; };
 		58E5D2142D0E581F000E39B4 /* ConvertCurrencyResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyResponseDTO.swift; sourceTree = "<group>"; };
@@ -373,7 +371,6 @@
 		58E5D1EB2D0CBEB7000E39B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				58E5D2092D0E16FA000E39B4 /* Footer */,
 				58E5D2042D0E089C000E39B4 /* InputPanel */,
 				58E5D1FD2D0DD885000E39B4 /* PopUpList */,
 				58E5D1EC2D0CBEEB000E39B4 /* ConvertAmountView.swift */,
@@ -409,14 +406,6 @@
 				58AD52B32D0F2D5B00986CA6 /* DigitalKeyboardSymbols.swift */,
 			);
 			path = InputPanel;
-			sourceTree = "<group>";
-		};
-		58E5D2092D0E16FA000E39B4 /* Footer */ = {
-			isa = PBXGroup;
-			children = (
-				58E5D20A2D0E1712000E39B4 /* ConvertCurrencyView.swift */,
-			);
-			path = Footer;
 			sourceTree = "<group>";
 		};
 		58E5D2102D0E3C49000E39B4 /* ViewModel */ = {
@@ -559,7 +548,6 @@
 				58AD52E02D0FAD5100986CA6 /* HTTPRequestBuilder.swift in Sources */,
 				58AD52D82D0FAD2D00986CA6 /* HTTPMethod.swift in Sources */,
 				58AD52BB2D0F7C0E00986CA6 /* HomeConfigurator.swift in Sources */,
-				58E5D20B2D0E1712000E39B4 /* ConvertCurrencyView.swift in Sources */,
 				58E5D2132D0E3F55000E39B4 /* ConvertCurrencyViewModelInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
