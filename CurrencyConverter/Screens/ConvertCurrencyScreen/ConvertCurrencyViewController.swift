@@ -66,14 +66,13 @@ final class ConvertCurrencyViewController: UIViewController {
         return view
     }()
     
-    // TODO: remove later if it wouldn't required by BL
-//    private lazy var footerPanel: ConvertCurrencyView = {
-//        let view = ConvertCurrencyView()
-//        view.handleButtonClickAction = { [weak self] in
-//            
-//        }
-//        return view
-//    }()
+    private lazy var footerPanel: ConvertCurrencyView = {
+        let view = ConvertCurrencyView()
+        view.handleButtonClickAction = { [weak self] in
+            
+        }
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
