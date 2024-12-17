@@ -25,6 +25,13 @@ protocol HomeVCNavigationDelegate: AnyObject {
 final class HomeViewController: UIViewController {
     var navigationDelegate: HomeVCNavigationDelegate?
     
+    private lazy var santaHatView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = UIImage(named: "Santa Hat")
+        return view
+    }()
+    
     private lazy var getStartedButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -59,9 +66,18 @@ final class HomeViewController: UIViewController {
     private func initUI() {
         view.backgroundColor = Styles.Color.backgroundColor
         view.addSubview(getStartedButton)
+        getStartedButton.addSubview(santaHatView)
+        
+        let santaHatSize: CGFloat = 75
+        let hatOffset: CGFloat = -(santaHatSize / 2)
+        santaHatView.heightAnchor.constraint(equalToConstant: santaHatSize).isActive = true
+        santaHatView.widthAnchor.constraint(equalToConstant: santaHatSize).isActive = true
+        santaHatView.topAnchor.constraint(equalTo: getStartedButton.topAnchor, constant: hatOffset).isActive = true
+        santaHatView.leadingAnchor.constraint(equalTo: getStartedButton.leadingAnchor, constant: hatOffset).isActive = true
         
         getStartedButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         getStartedButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        view.addShowEffect()
     }
 }
 

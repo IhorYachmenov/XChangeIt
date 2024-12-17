@@ -26,4 +26,29 @@ extension UIView {
         
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
+    
+    func addShowEffect() {
+        let flakeEmitterCell = CAEmitterCell()
+        flakeEmitterCell.contents = UIImage(named: "Snowflake Blue")?.cgImage
+        flakeEmitterCell.scale = 0.06
+        flakeEmitterCell.scaleRange = 0.3
+        flakeEmitterCell.emissionRange = .pi
+        flakeEmitterCell.lifetime = 20.0
+        flakeEmitterCell.birthRate = 40
+        flakeEmitterCell.velocity = -30
+        flakeEmitterCell.velocityRange = -20
+        flakeEmitterCell.yAcceleration = 30
+        flakeEmitterCell.xAcceleration = 5
+        flakeEmitterCell.spin = -0.5
+        flakeEmitterCell.spinRange = 1.0
+        
+        let snowEmitterLayer = CAEmitterLayer()
+        snowEmitterLayer.emitterPosition = CGPoint(x: self.bounds.width / 2.0, y: -50)
+        snowEmitterLayer.emitterSize = CGSize(width: self.bounds.width, height: 0)
+        snowEmitterLayer.emitterShape = CAEmitterLayerEmitterShape.line
+        snowEmitterLayer.beginTime = CACurrentMediaTime()
+        snowEmitterLayer.timeOffset = 10
+        snowEmitterLayer.emitterCells = [flakeEmitterCell]
+        self.layer.addSublayer(snowEmitterLayer)
+    }
 }
