@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "Convert"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Конвертація"
+          }
         }
       }
     },
@@ -20,16 +26,28 @@
             "state" : "translated",
             "value" : "From"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Із"
+          }
         }
       }
     },
-    "Quatity" : {
+    "Quantity" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quantity"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сума"
           }
         }
       }
@@ -42,6 +60,12 @@
             "state" : "translated",
             "value" : "Currency Conversion"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Конвертація Валюти"
+          }
         }
       }
     },
@@ -52,6 +76,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Currency Type"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип Валюти"
           }
         }
       }
@@ -64,6 +94,12 @@
             "state" : "translated",
             "value" : "To"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В"
+          }
         }
       }
     },
@@ -75,6 +111,12 @@
             "state" : "translated",
             "value" : "You Convert"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ви Конвертуєте"
+          }
         }
       }
     },
@@ -85,6 +127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "You Receive"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ви Отримаєте"
           }
         }
       }

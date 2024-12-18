@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "Cancel "
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відмінити"
+          }
         }
       }
     }
