@@ -20,8 +20,8 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let screenTitle = "Currency Type"
-        static let cancelButtonTitle = "Cancel"
+        static let screenTitle = AppLocalization.ConvertCurrencyScreen.sheetTitle
+        static let cancelButtonTitle = AppLocalization.Common.cancel
     }
 }
 

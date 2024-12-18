@@ -14,8 +14,8 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let from = "From"
-        static let to = "To"
+        static let from = AppLocalization.ConvertCurrencyScreen.from
+        static let to = AppLocalization.ConvertCurrencyScreen.to
     }
 }
 

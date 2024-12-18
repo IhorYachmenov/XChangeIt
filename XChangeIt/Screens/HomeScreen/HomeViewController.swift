@@ -14,7 +14,7 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let convertCurrencyButtonTitle = "Currency Conversion"
+        static let convertCurrencyButtonTitle = AppLocalization.HomeScreen.nextScreenButton
     }
 }
 
