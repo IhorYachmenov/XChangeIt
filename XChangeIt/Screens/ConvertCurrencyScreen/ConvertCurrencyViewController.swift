@@ -19,7 +19,7 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let screenTitle = "Currency Conversion"
+        static let screenTitle = AppLocalization.ConvertCurrencyScreen.title
     }
 }
 
@@ -151,18 +151,7 @@ final class ConvertCurrencyViewController: UIViewController {
             }
         }
         
-        let navigationVC = UINavigationController(rootViewController: currenciesVC)
-        
-        if let sheet = navigationVC.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.preferredCornerRadius = 24
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.prefersGrabberVisible = true
-            sheet.prefersEdgeAttachedInCompactHeight = true
-            
-            sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
-        }
-        present(navigationVC, animated: true, completion: nil)
+        presentSheetController(currenciesVC)
     }
     
     @objc

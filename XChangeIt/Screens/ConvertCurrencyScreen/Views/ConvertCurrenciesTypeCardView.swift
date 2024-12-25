@@ -16,7 +16,7 @@ fileprivate struct Styles {
     }
     
     struct Text {
-        static let viewTitle = "Convert"
+        static let viewTitle = AppLocalization.ConvertCurrencyScreen.convert
     }
     
     struct Image {
