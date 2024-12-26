@@ -21,14 +21,8 @@ The project includes a `XChangeIt App Design.fig` file, allowing you to open the
 ## Visual Representation Of The Project
 For a better review of the UI, screenshots of the app screens have been provided via the link below. These files are also included in the project in case the link becomes unavailable.<br>
 
-<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-    <div style="flex: 1; display: flex; justify-content: center;">
-        <img src="https://i.imgur.com/SQWiipX.png" style="max-width: 100%; height: auto;"/>
-    </div>
-    <div style="flex: 1; display: flex; justify-content: center;">
-        <img src="https://i.imgur.com/9oIIwuF.png" style="max-width: 100%; height: auto;"/>
-    </div>
-    <div style="flex: 1; display: flex; justify-content: center;">
-        <img src="https://i.imgur.com/CWLHjuy.png" style="max-width: 100%; height: auto;"/>
-    </div>
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://i.imgur.com/SQWiipX.png" style="max-width: 30%; height: auto;"/>
+    <img src="https://i.imgur.com/9oIIwuF.png" style="max-width: 30%; height: auto;"/>
+    <img src="https://i.imgur.com/CWLHjuy.png" style="max-width: 30%; height: auto;"/>
 </div>
