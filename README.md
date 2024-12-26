@@ -23,12 +23,12 @@ For a better review of the UI, screenshots of the app screens have been provided
 
 <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
     <div style="flex: 1; display: flex; justify-content: center;">
-        <img src="./XChangeItAppScreenshots/HomeScreen.png" style="max-width: 100%; height: auto;"/>
+        <img src="https://i.imgur.com/SQWiipX.png" style="max-width: 100%; height: auto;"/>
     </div>
     <div style="flex: 1; display: flex; justify-content: center;">
-        <img src="./XChangeItAppScreenshots/CurrencyConverterScreen.png" style="max-width: 100%; height: auto;"/>
+        <img src="https://i.imgur.com/9oIIwuF.png" style="max-width: 100%; height: auto;"/>
     </div>
     <div style="flex: 1; display: flex; justify-content: center;">
-        <img src="./XChangeItAppScreenshots/CurrencyTypeSheet.png" style="max-width: 100%; height: auto;"/>
+        <img src="https://i.imgur.com/CWLHjuy.png" style="max-width: 100%; height: auto;"/>
     </div>
 </div>
