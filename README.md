@@ -1,9 +1,3 @@
-<p align="center">
-    <img src="https://i.imgur.com/SQWiipX.png" style="max-width: 30%; height: auto;"/>
-    <img src="https://i.imgur.com/9oIIwuF.png" style="max-width: 30%; height: auto;"/>
-    <img src="https://i.imgur.com/CWLHjuy.png" style="max-width: 30%; height: auto;"/>
-</p>
-
 ## How To Run
 Clone the repository and build the project. No external dependencies are required.
 
@@ -27,3 +21,8 @@ The project includes a `XChangeIt App Design.fig` file, allowing you to open the
 ## Visual Representation Of The Project
 For a better review of the UI, screenshots of the app screens have been provided via the link below. These files are also included in the project in case the link becomes unavailable.<br>
 
+<p float="left">
+  <img src="https://i.imgur.com/SQWiipX.png" width="100" />
+  <img src="https://i.imgur.com/9oIIwuF.png" width="100" /> 
+  <img src="https://i.imgur.com/CWLHjuy.png" width="100" />
+</p>
