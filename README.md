@@ -20,6 +20,6 @@ The project includes a `XChangeIt App Design.fig` file, allowing you to open the
 
 ## Visual Representation Of The Project
 For a better review of the UI, screenshots of the app screens have been provided via the link below. These files are also included in the project in case the link becomes unavailable.<br>
-![Home Screen](https://imgur.com/SQWiipX)
-![Currency Converter Screen](https://imgur.com/9oIIwuF)
-![Currency Type Sheet](https://imgur.com/SQWiipX)
+![Home Screen](./XChangeItAppScreenshots/HomeScreen.png "Home")
+![Currency Converter Screen](./XChangeItAppScreenshots/CurrencyConverterScreen.png "Currency Converter")
+![Currency Type Sheet](./XChangeItAppScreenshots/CurrencyTypeSheet.png "Currency Type Sheet")
