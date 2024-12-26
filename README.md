@@ -19,7 +19,7 @@ The overall flow is Gitflow:
 The project includes a `XChangeIt App Design.fig` file, allowing you to open the design locally if the link is broken. (Screen 12 refers to the main app screen.), and file `Countries Flag Icons.fig` with all coutries flags [figma link](https://www.figma.com/design/3b9KVCprjufKmQk1Cd9BpS/Countries-Flag-icon-(%2B1000-ICON)-(Community)?m=auto&t=4dDbD2otAR6D3zfn-6). 
 
 ## Visual Representation Of The Project
-For a better review of the UI, screenshots of the app screens have been provided via the link below. These files are also included in the project in case the link becomes unavailable.<br>
+For a representation of the app's UI, screenshots of the app screens are provided below. These files are included in the project folder `XChangeItAppScreenshots`.<br>
 
 <p align="center">
   <img src="./XChangeItAppScreenshots/HomeScreen.png" style="width: 30%;" />
