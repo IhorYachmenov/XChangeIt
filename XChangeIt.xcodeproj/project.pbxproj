@@ -169,13 +169,13 @@
 			isa = PBXGroup;
 			children = (
 				584519FB2D1C94D400327A42 /* AppContext */,
-				584519FE2D1C94D400327A42 /* Application */,
-				58451A372D1C94D400327A42 /* Extensions */,
 				584519F92D1C94D400327A42 /* Navigation */,
-				58451A272D1C94D400327A42 /* Network */,
-				58451A112D1C94D400327A42 /* Resources */,
 				584519F72D1C94D400327A42 /* Screens */,
 				58451A2A2D1C94D400327A42 /* Services */,
+				58451A272D1C94D400327A42 /* Network */,
+				58451A372D1C94D400327A42 /* Extensions */,
+				58451A112D1C94D400327A42 /* Resources */,
+				584519FE2D1C94D400327A42 /* Application */,
 			);
 			path = XChangeIt;
 			sourceTree = "<group>";
@@ -270,8 +270,8 @@
 		584519F72D1C94D400327A42 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				584519F32D1C94D400327A42 /* ConvertCurrencyScreen */,
 				584519F62D1C94D400327A42 /* HomeScreen */,
+				584519F32D1C94D400327A42 /* ConvertCurrencyScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";

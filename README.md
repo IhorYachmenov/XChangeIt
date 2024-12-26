@@ -1,4 +1,4 @@
-## How to run
+## How To Run
 Clone the repository and build the project. No external dependencies are required.
 
 ## Project Details
@@ -17,3 +17,9 @@ The overall flow is Gitflow:
 ## [Design Reference](https://www.figma.com/design/OvTlQkYwuZp3pjuKKyLBGU/CryptoExchange-Mobile-App-FREE-(Community)?node-id=423-16231&t=BFamOO0oMyMdhkce-4)
 
 The project includes a `XChangeIt App Design.fig` file, allowing you to open the design locally if the link is broken. (Screen 12 refers to the main app screen.), and file `Countries Flag Icons.fig` with all coutries flags [figma link](https://www.figma.com/design/3b9KVCprjufKmQk1Cd9BpS/Countries-Flag-icon-(%2B1000-ICON)-(Community)?m=auto&t=4dDbD2otAR6D3zfn-6). 
+
+## Visual Representation Of The Project
+For a better review of the UI, screenshots of the app screens have been provided via the link below. These files are also included in the project in case the link becomes unavailable.<br>
+![Home Screen](https://imgur.com/SQWiipX)
+![Currency Converter Screen](https://imgur.com/9oIIwuF)
+![Currency Type Sheet](https://imgur.com/SQWiipX)
