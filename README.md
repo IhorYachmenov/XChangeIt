@@ -22,7 +22,7 @@ The project includes a `XChangeIt App Design.fig` file, allowing you to open the
 For a better review of the UI, screenshots of the app screens have been provided via the link below. These files are also included in the project in case the link becomes unavailable.<br>
 
 <p align="center">
-  <img src="https://i.imgur.com/SQWiipX.png" style="width: 30%;" />
-  <img src="https://i.imgur.com/9oIIwuF.png" style="width: 30%;" /> 
-  <img src="https://i.imgur.com/CWLHjuy.png" style="width: 30%;" />
+  <img src="./XChangeItAppScreenshots/HomeScreen.png" style="width: 30%;" />
+  <img src="./XChangeItAppScreenshots/CurrencyConverterScreen.png" style="width: 30%;" /> 
+  <img src="./XChangeItAppScreenshots/CurrencyTypeSheet.png" style="width: 30%;" />
 </p>
