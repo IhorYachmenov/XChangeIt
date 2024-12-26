@@ -21,14 +21,14 @@ The project includes a `XChangeIt App Design.fig` file, allowing you to open the
 ## Visual Representation Of The Project
 For a better review of the UI, screenshots of the app screens have been provided via the link below. These files are also included in the project in case the link becomes unavailable.<br>
 
-<div style="display:flex; align-items: center;">
-     <div style="flex:1">
-          <img src="./XChangeItAppScreenshots/HomeScreen.png"/>
-     </div>
-     <div style="flex:1;padding-left:10px;">
-          <img src="./XChangeItAppScreenshots/CurrencyConverterScreen.png" />
-     </div>
-     <div style="flex:1;padding-left:10px;">
-          <img src="./XChangeItAppScreenshots/CurrencyTypeSheet.png" />
-     </div>
+<div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <div style="flex: 1; display: flex; justify-content: center;">
+        <img src="./XChangeItAppScreenshots/HomeScreen.png" style="max-width: 100%; height: auto;"/>
+    </div>
+    <div style="flex: 1; display: flex; justify-content: center;">
+        <img src="./XChangeItAppScreenshots/CurrencyConverterScreen.png" style="max-width: 100%; height: auto;"/>
+    </div>
+    <div style="flex: 1; display: flex; justify-content: center;">
+        <img src="./XChangeItAppScreenshots/CurrencyTypeSheet.png" style="max-width: 100%; height: auto;"/>
+    </div>
 </div>
