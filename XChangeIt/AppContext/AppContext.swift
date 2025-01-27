@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// MARK: - Monolit
 struct AppEnvironment {
     static let baseURL: String = "http://api.evp.lt"
 }
