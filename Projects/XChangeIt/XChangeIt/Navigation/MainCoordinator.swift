@@ -19,12 +19,12 @@ final class MainFlowCoordinator {
     }
     
     func runFlow() {
-        let vc = HomeConfigurator.initializeHomeVC(navigationDelegate: self)
+        let vc = HomeConfigurator.initHomeVC(navigationDelegate: self)
         navigationController.pushViewController(vc, animated: true)
     }
     
     fileprivate func openCurrencyConverterScreen() {
-        let vc = ConvertCurrencyConfigurator.initializeConvertCurrencyVC(navigationDelegate: self, httpClient: httpClient)
+        let vc = ConvertCurrencyConfigurator.initConvertCurrencyVC(navigationDelegate: self, httpClient: httpClient)
         navigationController.pushViewController(vc, animated: true)
     }
 }

@@ -8,9 +8,8 @@
 import XChangeItHome
 
 final class HomeConfigurator {
-    class func initializeHomeVC(navigationDelegate: HomeVCNavigationDelegate) -> HomeViewController {
-        let vc = HomeViewController()
-        vc.navigationDelegate = navigationDelegate
+    class func initHomeVC(navigationDelegate: HomeVCNavigationDelegate) -> HomeViewController {
+        let vc = HomeBuilder().build(navigationDelegate: navigationDelegate)
         return vc
     }
 }

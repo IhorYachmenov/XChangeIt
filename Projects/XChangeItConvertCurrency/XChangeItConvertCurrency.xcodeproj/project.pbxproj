@@ -24,6 +24,7 @@
 		58ACECBC2D498C12001452DB /* XChangeItCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACECBB2D498C12001452DB /* XChangeItCore.framework */; };
 		58ACECBD2D498C12001452DB /* XChangeItCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACECBB2D498C12001452DB /* XChangeItCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58ACECC92D498ED8001452DB /* String+KeyboardInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACECC82D498ED8001452DB /* String+KeyboardInput.swift */; };
+		58ACED0A2D4A710B001452DB /* ConvertCurrencyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACED092D4A710B001452DB /* ConvertCurrencyBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,7 @@
 		58ACEC7B2D4984C9001452DB /* DigitalKeyboardSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardSymbols.swift; sourceTree = "<group>"; };
 		58ACECBB2D498C12001452DB /* XChangeItCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XChangeItCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ACECC82D498ED8001452DB /* String+KeyboardInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+KeyboardInput.swift"; sourceTree = "<group>"; };
+		58ACED092D4A710B001452DB /* ConvertCurrencyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCurrencyBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				58ACEC5E2D4982C2001452DB /* ViewModel */,
 				58ACEC5F2D4982C8001452DB /* Views */,
 				58ACEC5B2D498295001452DB /* ConvertCurrencyViewController.swift */,
+				58ACED092D4A710B001452DB /* ConvertCurrencyBuilder.swift */,
 			);
 			path = XChangeItConvertCurrency;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58ACECC92D498ED8001452DB /* String+KeyboardInput.swift in Sources */,
+				58ACED0A2D4A710B001452DB /* ConvertCurrencyBuilder.swift in Sources */,
 				58ACEC762D49847B001452DB /* CurrenciesListVC.swift in Sources */,
 				58ACEC782D4984BA001452DB /* KeyboardButton.swift in Sources */,
 				58ACEC612D4982E3001452DB /* ConvertCurrencyResponse.swift in Sources */,
