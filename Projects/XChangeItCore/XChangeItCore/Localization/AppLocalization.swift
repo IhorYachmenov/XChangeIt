@@ -13,7 +13,7 @@ public enum AppLocalizedTables: String {
     case comon = "Common"
 }
 
-public struct AppLocalization {
+public class AppLocalization {
     public struct Common {
         public static let cancel = String.localizable(key: "Cancel", table: .comon)
     }
