@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Projects/XChangeIt/XChangeIt.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Projects/XChangeItHome/XChangeItHome.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Projects/XChangeItConvertCurrency/XChangeItConvertCurrency.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Projects/XChangeItCore/XChangeItCore.xcodeproj">
+   </FileRef>
+</Workspace>
