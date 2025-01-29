@@ -8,5 +8,9 @@
 import Foundation
 
 public struct ConvertCurrencyResponse {
-    let amount: String
+    public let amount: String
+    
+    public init(amount: String) {
+        self.amount = amount
+    }
 }

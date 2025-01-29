@@ -24,12 +24,12 @@ public protocol HomeVCNavigationDelegate: AnyObject {
 }
 
 public final class HomeViewController: UIViewController {
-    public var navigationDelegate: HomeVCNavigationDelegate?
+    public weak var navigationDelegate: HomeVCNavigationDelegate?
     
     private lazy var santaHatView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(namedInCore:"Santa Hat")
+        view.image = UIImage(namedInCore: "Santa Hat")
         return view
     }()
     

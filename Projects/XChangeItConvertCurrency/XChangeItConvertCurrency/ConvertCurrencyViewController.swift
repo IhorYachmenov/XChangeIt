@@ -29,7 +29,7 @@ public protocol ConvertCurrencyVCNavigationDelegate: AnyObject {
 }
 
 public final class ConvertCurrencyViewController: UIViewController {
-    public var navigationDelegate: ConvertCurrencyVCNavigationDelegate?
+    public weak var navigationDelegate: ConvertCurrencyVCNavigationDelegate?
     public var viewModel: ConvertCurrencyViewModelInterface?
     
     let defaultSourceCurrency: CurrencyType = .unitedStatesDollar

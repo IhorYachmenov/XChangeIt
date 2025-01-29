@@ -8,7 +8,7 @@
 public final class ConvertCurrencyBuilder {
     public init() {}
     
-    public  func build(navigationDelegate: ConvertCurrencyVCNavigationDelegate, service: ConvertCurrencyServiceInterface) -> ConvertCurrencyViewController {
+    public  func build(navigationDelegate: ConvertCurrencyVCNavigationDelegate?, service: ConvertCurrencyServiceInterface) -> ConvertCurrencyViewController {
         let viewModel = ConvertCurrencyViewModel(service: service)
         let vc = ConvertCurrencyViewController()
         vc.navigationDelegate = navigationDelegate
