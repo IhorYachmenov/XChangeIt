@@ -121,7 +121,7 @@
 				584519F92D1C94D400327A42 /* Navigation */,
 				584519F72D1C94D400327A42 /* Screens */,
 				58451A2A2D1C94D400327A42 /* Services */,
-				58451A272D1C94D400327A42 /* Network */,
+				58ACED6A2D4A7A9E001452DB /* Infrastructure */,
 				58451A112D1C94D400327A42 /* Resources */,
 				584519FE2D1C94D400327A42 /* Application */,
 			);
@@ -171,22 +171,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		58451A132D1C94D400327A42 /* HomeFlowAPIs */ = {
-			isa = PBXGroup;
-			children = (
-				58451A122D1C94D400327A42 /* ConvertCurrencyAPI.swift */,
-			);
-			path = HomeFlowAPIs;
-			sourceTree = "<group>";
-		};
-		58451A142D1C94D400327A42 /* APIs */ = {
-			isa = PBXGroup;
-			children = (
-				58451A132D1C94D400327A42 /* HomeFlowAPIs */,
-			);
-			path = APIs;
-			sourceTree = "<group>";
-		};
 		58451A1D2D1C94D400327A42 /* URLRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,18 +206,10 @@
 			path = NetworkClient;
 			sourceTree = "<group>";
 		};
-		58451A272D1C94D400327A42 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				58451A142D1C94D400327A42 /* APIs */,
-				58451A262D1C94D400327A42 /* NetworkClient */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		58451A292D1C94D400327A42 /* HomeFlow */ = {
 			isa = PBXGroup;
 			children = (
+				58451A122D1C94D400327A42 /* ConvertCurrencyAPI.swift */,
 				58451A282D1C94D400327A42 /* ConvertCurrencyService.swift */,
 			);
 			path = HomeFlow;
@@ -264,6 +240,14 @@
 				58ACECB32D4988E3001452DB /* ConvertCurrencyConfigurator.swift */,
 			);
 			path = HomeFlow;
+			sourceTree = "<group>";
+		};
+		58ACED6A2D4A7A9E001452DB /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				58451A262D1C94D400327A42 /* NetworkClient */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
