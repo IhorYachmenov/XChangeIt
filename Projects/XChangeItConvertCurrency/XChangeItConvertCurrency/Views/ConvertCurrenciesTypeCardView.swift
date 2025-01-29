@@ -21,7 +21,7 @@ fileprivate struct Styles {
     }
     
     struct Image {
-        static let swapIcon = UIImage(named: "HorizontalSwapGrayColor")
+        static let swapIcon = UIImage(namedInCore: "HorizontalSwapGrayColor")
     }
 }
 

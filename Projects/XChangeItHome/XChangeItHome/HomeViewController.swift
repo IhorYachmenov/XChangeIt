@@ -29,7 +29,7 @@ public final class HomeViewController: UIViewController {
     private lazy var santaHatView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named:"Santa Hat")
+        view.image = UIImage(namedInCore:"Santa Hat")
         return view
     }()
     

@@ -65,7 +65,7 @@ public enum CurrencyType {
     }
     
     private func img(_ name: String) -> UIImage? {
-        return UIImage(named: name)
+        return UIImage(namedInCore: name)
     }
     
     static let listOfAll: [CurrencyType] = [

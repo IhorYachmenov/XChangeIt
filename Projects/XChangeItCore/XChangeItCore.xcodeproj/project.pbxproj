@@ -32,6 +32,7 @@
 		58ACECE52D49992B001452DB /* ReadexPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58ACECDE2D49992A001452DB /* ReadexPro-SemiBold.ttf */; };
 		58ACECE62D49992B001452DB /* ReadexPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58ACECDF2D49992B001452DB /* ReadexPro-ExtraLight.ttf */; };
 		58ACECE72D49992B001452DB /* ReadexPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58ACECE02D49992B001452DB /* ReadexPro-Light.ttf */; };
+		58ACED062D49ACCB001452DB /* UIImage+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACED052D49ACCB001452DB /* UIImage+Core.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		58ACECDE2D49992A001452DB /* ReadexPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		58ACECDF2D49992B001452DB /* ReadexPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-ExtraLight.ttf"; sourceTree = "<group>"; };
 		58ACECE02D49992B001452DB /* ReadexPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReadexPro-Light.ttf"; sourceTree = "<group>"; };
+		58ACED052D49ACCB001452DB /* UIImage+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Core.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				58ACEC862D498589001452DB /* UIView+Shadow.swift */,
 				58ACEC842D498589001452DB /* UIViewController+Header.swift */,
 				58ACEC872D498589001452DB /* UIViewController+Sheet.swift */,
+				58ACED052D49ACCB001452DB /* UIImage+Core.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				58ACEC932D498589001452DB /* UIViewController+Sheet.swift in Sources */,
 				58ACEC8F2D498589001452DB /* UIApplication+Inset.swift in Sources */,
 				58ACEC8D2D498589001452DB /* Dictionary+JSON.swift in Sources */,
+				58ACED062D49ACCB001452DB /* UIImage+Core.swift in Sources */,
 				58ACEC8B2D498589001452DB /* UIImageView+Animation.swift in Sources */,
 				58ACECC32D498C90001452DB /* Errors.swift in Sources */,
 				58ACEC8C2D498589001452DB /* String+Localizable.swift in Sources */,

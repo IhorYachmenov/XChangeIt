@@ -15,7 +15,7 @@ fileprivate struct Styles {
     }
 
     struct Image {
-        static let deleteButtonIcon = UIImage(named: "KeyboardDeleteIconBlack")
+        static let deleteButtonIcon = UIImage(namedInCore: "KeyboardDeleteIconBlack")
     }
 }
 

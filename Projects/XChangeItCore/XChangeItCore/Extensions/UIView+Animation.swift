@@ -29,7 +29,7 @@ public extension UIView {
     
     func addShowEffect() {
         let flakeEmitterCell = CAEmitterCell()
-        flakeEmitterCell.contents = UIImage(named: "Snowflake Blue")?.cgImage
+        flakeEmitterCell.contents = UIImage(namedInCore: "Snowflake Blue")?.cgImage
         flakeEmitterCell.scale = 0.06
         flakeEmitterCell.scaleRange = 0.3
         flakeEmitterCell.emissionRange = .pi

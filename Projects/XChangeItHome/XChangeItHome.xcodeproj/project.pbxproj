@@ -10,7 +10,23 @@
 		58ACEC572D498217001452DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACEC562D498217001452DB /* HomeViewController.swift */; };
 		58ACECB72D498BF9001452DB /* XChangeItCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACECB62D498BF9001452DB /* XChangeItCore.framework */; };
 		58ACECB82D498BF9001452DB /* XChangeItCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACECB62D498BF9001452DB /* XChangeItCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		58ACECEF2D49A91E001452DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACECEE2D49A91E001452DB /* AppDelegate.swift */; };
+		58ACECF12D49A91E001452DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACECF02D49A91E001452DB /* SceneDelegate.swift */; };
+		58ACECF82D49A91F001452DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58ACECF72D49A91F001452DB /* Assets.xcassets */; };
+		58ACECFB2D49A91F001452DB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 58ACECFA2D49A91F001452DB /* Base */; };
+		58ACED002D49A943001452DB /* XChangeItHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACEC172D498051001452DB /* XChangeItHome.framework */; };
+		58ACED012D49A943001452DB /* XChangeItHome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACEC172D498051001452DB /* XChangeItHome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58ACED022D49A943001452DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58ACEC0E2D498051001452DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58ACEC162D498051001452DB;
+			remoteInfo = XChangeItHome;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58ACECB92D498BF9001452DB /* Embed Frameworks */ = {
@@ -24,12 +40,29 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58ACED042D49A943001452DB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				58ACED012D49A943001452DB /* XChangeItHome.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		58ACEC172D498051001452DB /* XChangeItHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XChangeItHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ACEC562D498217001452DB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		58ACECB62D498BF9001452DB /* XChangeItCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XChangeItCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58ACECEC2D49A91E001452DB /* XChangeItHomeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XChangeItHomeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58ACECEE2D49A91E001452DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		58ACECF02D49A91E001452DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		58ACECF72D49A91F001452DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58ACECFA2D49A91F001452DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58ACECFC2D49A91F001452DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +74,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58ACECE92D49A91E001452DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58ACED002D49A943001452DB /* XChangeItHome.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -48,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				58ACEC192D498051001452DB /* XChangeItHome */,
+				58ACECED2D49A91E001452DB /* XChangeItHomeExample */,
 				58ACEC182D498051001452DB /* Products */,
 				58ACECB52D498BF9001452DB /* Frameworks */,
 			);
@@ -57,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				58ACEC172D498051001452DB /* XChangeItHome.framework */,
+				58ACECEC2D49A91E001452DB /* XChangeItHomeExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +118,34 @@
 				58ACECB62D498BF9001452DB /* XChangeItCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58ACECED2D49A91E001452DB /* XChangeItHomeExample */ = {
+			isa = PBXGroup;
+			children = (
+				58ACED072D49B1B9001452DB /* Application */,
+				58ACED082D49B1C2001452DB /* Resources */,
+				58ACECFC2D49A91F001452DB /* Info.plist */,
+			);
+			path = XChangeItHomeExample;
+			sourceTree = "<group>";
+		};
+		58ACED072D49B1B9001452DB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				58ACECEE2D49A91E001452DB /* AppDelegate.swift */,
+				58ACECF02D49A91E001452DB /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		58ACED082D49B1C2001452DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58ACECF72D49A91F001452DB /* Assets.xcassets */,
+				58ACECF92D49A91F001452DB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +180,25 @@
 			productReference = 58ACEC172D498051001452DB /* XChangeItHome.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		58ACECEB2D49A91E001452DB /* XChangeItHomeExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58ACECFD2D49A91F001452DB /* Build configuration list for PBXNativeTarget "XChangeItHomeExample" */;
+			buildPhases = (
+				58ACECE82D49A91E001452DB /* Sources */,
+				58ACECE92D49A91E001452DB /* Frameworks */,
+				58ACECEA2D49A91E001452DB /* Resources */,
+				58ACED042D49A943001452DB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58ACED032D49A943001452DB /* PBXTargetDependency */,
+			);
+			name = XChangeItHomeExample;
+			productName = XChangeItHomeExample;
+			productReference = 58ACECEC2D49A91E001452DB /* XChangeItHomeExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -116,11 +206,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					58ACEC162D498051001452DB = {
 						CreatedOnToolsVersion = 15.3;
 						LastSwiftMigration = 1530;
+					};
+					58ACECEB2D49A91E001452DB = {
+						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
@@ -138,6 +232,7 @@
 			projectRoot = "";
 			targets = (
 				58ACEC162D498051001452DB /* XChangeItHome */,
+				58ACECEB2D49A91E001452DB /* XChangeItHomeExample */,
 			);
 		};
 /* End PBXProject section */
@@ -147,6 +242,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58ACECEA2D49A91E001452DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58ACECF82D49A91F001452DB /* Assets.xcassets in Resources */,
+				58ACECFB2D49A91F001452DB /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +265,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58ACECE82D49A91E001452DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58ACECEF2D49A91E001452DB /* AppDelegate.swift in Sources */,
+				58ACECF12D49A91E001452DB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58ACED032D49A943001452DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58ACEC162D498051001452DB /* XChangeItHome */;
+			targetProxy = 58ACED022D49A943001452DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		58ACECF92D49A91F001452DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58ACECFA2D49A91F001452DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		58ACEC1C2D498051001452DB /* Debug */ = {
@@ -354,6 +486,66 @@
 			};
 			name = Release;
 		};
+		58ACECFE2D49A91F001452DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XChangeItHomeExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.10ec7515b1285f91.XChangeItHomeExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		58ACECFF2D49A91F001452DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XChangeItHomeExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.10ec7515b1285f91.XChangeItHomeExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -371,6 +563,15 @@
 			buildConfigurations = (
 				58ACEC1F2D498051001452DB /* Debug */,
 				58ACEC202D498051001452DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58ACECFD2D49A91F001452DB /* Build configuration list for PBXNativeTarget "XChangeItHomeExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58ACECFE2D49A91F001452DB /* Debug */,
+				58ACECFF2D49A91F001452DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,7 +16,7 @@ fileprivate struct Styles {
     }
     
     struct Image {
-        static let backButtonIcon = UIImage(named: "BackButtonGreyColor")
+        static let backButtonIcon = UIImage(namedInCore: "BackButtonGreyColor")
     }
     
     struct Text {
